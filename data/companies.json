@@ -1,0 +1,240 @@
+[
+ {
+  "slug": "gaisha-master",
+  "name": "外車マスター",
+  "official_url": "https://gsmaster.jp/",
+  "operator": {
+   "name": "株式会社横浜ユーポス",
+   "address": "神奈川県川崎市高津区二子6-14-10 YTTビル2F",
+   "kobutsu": "神奈川県公安委員会 第452530007181号",
+   "source": "https://gsmaster.jp/company/"
+  },
+  "target": "輸入車・外車全般。不動車・事故車でも買取可能(FAQ明記)",
+  "area": "出張査定(店舗:神奈川・静岡・栃木・愛知・宮城・福岡。エリア明記は公式では確認できず)",
+  "hiyou": {
+   "satei": "無料(出張査定含む)",
+   "hikitori": null,
+   "shorui": null
+  },
+  "uketsuke": "電話 10:00〜19:00(水曜・日曜定休)",
+  "nyukin": "ローンなし車両は引取・書類提出後最短翌日",
+  "cancel": "「不当なキャンセル料一切ありません」(詳細規定は公式では確認できず)",
+  "features": [
+   "直販体制",
+   "引取後の減額交渉なし",
+   "連絡は一社からのみ"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "引取費用・書類代行の無料/有料は公式では確認できず"
+ },
+ {
+  "slug": "gaisha-oh",
+  "name": "外車王",
+  "official_url": "https://www.gaisha-oh.com/",
+  "operator": {
+   "name": "カレント自動車株式会社(東証上場・証券コード7690)",
+   "address": "神奈川県横浜市港北区新横浜2-5-11 金子第1ビル2F",
+   "kobutsu": "神奈川県公安委員会許可 第451930000216号",
+   "source": "https://www.gaisha-oh.com/company/"
+  },
+  "target": "輸入車全般。事故車・廃車・水没車・故障車・不動車の対応ページあり",
+  "area": "全国出張査定",
+  "hiyou": {
+   "satei": "無料(出張料・査定料無料)",
+   "hikitori": null,
+   "shorui": "無料(名義変更手数料無料)"
+  },
+  "uketsuke": "9:00〜22:00(年中無休)",
+  "nyukin": "外車王買取: 車と必要書類を預かった日の翌営業日。提携店買取: 到着後3営業日以内",
+  "cancel": "引渡し当日と翌日までは負担なくキャンセル可。以降は運搬料金等の実損額負担の場合あり",
+  "features": [
+   "50社以上の提携業者による入札制",
+   "コンシェルジュ代行",
+   "二重査定なし・契約後キャンセル料なしを訴求"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "陸送費用単体の表記は公式では確認できず"
+ },
+ {
+  "slug": "qsha-oh",
+  "name": "旧車王",
+  "official_url": "https://www.qsha-oh.com/",
+  "operator": {
+   "name": "カレント自動車株式会社(東証上場・証券コード7690)",
+   "address": "神奈川県横浜市港北区新横浜2-5-11 金子第1ビル2F",
+   "kobutsu": "神奈川県公安委員会許可 第451930000216号",
+   "source": "https://www.qsha-oh.com/company"
+  },
+  "target": "10年以上古い車がメインの旧車特化。修復歴車・不動車も対象",
+  "area": "北海道から沖縄まで離島含め全国無料出張査定",
+  "hiyou": {
+   "satei": "無料",
+   "hikitori": "無料(車輌引き上げ料金含む)",
+   "shorui": "無料(名義変更等の費用一切なし)"
+  },
+  "uketsuke": "9:00〜22:00(年中無休)",
+  "nyukin": "引上げ確認+書類確認がとれた日の翌々営業日(条件次第で当日も可)",
+  "cancel": null,
+  "features": [
+   "旧車専門",
+   "二重査定なし(JPUC適正買取店)",
+   "減額ゼロ訴求",
+   "創業25年以上・累積買取15,000件超(公式記載)"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "契約後キャンセル規定は公式では確認できず"
+ },
+ {
+  "slug": "haishar",
+  "name": "ハイシャル",
+  "official_url": "https://haishall.jp/",
+  "operator": {
+   "name": "ユニオンエタニティ株式会社",
+   "address": "大阪府大阪市西区南堀江1-1-14 四ツ橋中埜ビル4F",
+   "kobutsu": "第621120162041号(公安委員会名は公式では確認できず)",
+   "source": "https://haishall.jp/company/"
+  },
+  "target": "どんな車でも対応(事故車・不動車・水没車・年式20年超・20万km超も可)",
+  "area": "全国47都道府県(一部島しょ部除く)引き取り無料",
+  "hiyou": {
+   "satei": "無料",
+   "hikitori": "無料(レッカー引取無料)",
+   "shorui": "無料(廃車手続き書類代行無料)"
+  },
+  "uketsuke": "電話(年中無休・朝晩も対応と記載。具体時刻は公式では確認できず)。WEB・LINE査定あり",
+  "nyukin": "最短翌日振込(引取完了+必要書類到着時)",
+  "cancel": "成約後のキャンセルはキャンセル料30,000円",
+  "features": [
+   "どんな車でも0円以上買取保証",
+   "最短20秒スピード査定",
+   "最短当日引き取り",
+   "見積後の減額一切なし",
+   "自動車税還付金対応(普通車)"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "正ドメインはhaishall.jp(ブリーフのhaishar.comは不存在)"
+ },
+ {
+  "slug": "truck-oukoku",
+  "name": "トラック王国",
+  "official_url": "https://www.55truck.com/",
+  "operator": {
+   "name": "株式会社トラックオーコク",
+   "address": "東京都渋谷区笹塚1-55-7 マルエスファーストビル",
+   "kobutsu": "第304421008668号",
+   "source": "https://www.55truck.co.jp/company/outline/"
+  },
+  "service_type": "買取直販(商用車専門・買取〜国内販売一貫・リースバックあり)",
+  "target": "トラック全般(平ボディ・ダンプ・クレーン付等)、バス、建設機械(重機)、特殊車両",
+  "area": "全国47都道府県",
+  "hiyou": {
+   "satei": "無料(最短30秒ネット査定)",
+   "tesuryo": "無料",
+   "hikitori": "無料",
+   "shorui": "無料"
+  },
+  "uketsuke": "月〜金 9:00〜19:00(土祝18:00まで)",
+  "nyukin": null,
+  "cancel": null,
+  "features": [
+   "全国対応",
+   "買取〜販売一貫で中間マージン排除訴求",
+   "リースバックあり",
+   "創業16年(公式記載)"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "企業サイト55truck.co.jp/サービス55truck.com。入金タイミング・キャンセル規定は公式では確認できず"
+ },
+ {
+  "slug": "bee-truck",
+  "name": "Bee Truck",
+  "official_url": "https://www.bee-truck.com/",
+  "operator": {
+   "name": "株式会社BeeTruck",
+   "address": "兵庫県たつの市誉田町下沖字久保39-1",
+   "kobutsu": "第63114180017号",
+   "source": "https://www.bee-truck.com/company/"
+  },
+  "service_type": "買取直販(買取〜再生整備〜販売一貫)",
+  "target": "トラック・ダンプ・重機(油圧ショベル・クレーン・フォークリフト等)・バス。不動車・事故車も相談可",
+  "area": "全国対応(本社兵庫・北関東支店2026年9月予定)",
+  "hiyou": {
+   "satei": "無料(出張査定含む・公式FAQ)",
+   "tesuryo": null,
+   "hikitori": null,
+   "shorui": null
+  },
+  "uketsuke": "9:00〜18:00(日祝除く)・ネット/LINE/電話",
+  "nyukin": "書類が揃い引き渡し完了後速やかに振込(公式FAQ)。最短即日現金化の記載",
+  "cancel": null,
+  "features": [
+   "最短当日査定・最短即日現金化",
+   "無料出張査定",
+   "地方運輸局長認証工場で整備・架装まで一貫",
+   "不動車・事故車も買取可能な場合あり"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "引取費用・書類代行・キャンセル規定は公式では確認できず"
+ },
+ {
+  "slug": "sellca",
+  "name": "セルカ",
+  "official_url": "https://www.sellca-sellcar.com/",
+  "operator": {
+   "name": "クイック・ネットワーク株式会社",
+   "address": "兵庫県神戸市中央区明石町44 神戸御幸ビル4F",
+   "kobutsu": null,
+   "source": "https://quicknetwork.co.jp/company/"
+  },
+  "service_type": "オークション型買取(8,000社以上の登録バイヤーが入札)",
+  "target": "乗用車全般(軽・セダン・SUV・ミニバン・トラック・輸入車等)",
+  "area": "全国(登録バイヤー8,845社)",
+  "hiyou": {
+   "satei": "無料(検査・出品費用なし)",
+   "tesuryo": "成約時のみ33,000円(公式表示)",
+   "hikitori": null,
+   "shorui": null
+  },
+  "uketsuke": "9:00〜19:00",
+  "nyukin": "車両引き渡し後7〜14日",
+  "cancel": "最高入札額が希望価格未達ならキャンセル可・キャンセル料無料",
+  "features": [
+   "電話はセルカのみ(しつこい営業電話一切なしと公式記載)",
+   "オークション形式で相場より高値になりやすいと公式記載",
+   "希望価格未達ならキャンセル無料"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "古物商許可番号・引取/書類費用は公式では確認できず。33,000円の税込/税抜は公式表示のまま"
+ },
+ {
+  "slug": "strema",
+  "name": "ストリマ",
+  "official_url": "https://strema.jp/",
+  "operator": {
+   "name": "ストリマ株式会社",
+   "address": "東京都目黒区鷹番1-6-16-203",
+   "kobutsu": null,
+   "source": "https://strema.co.jp/ 会社概要"
+  },
+  "service_type": "一括査定・中古車売買プラットフォーム(チャット完結型アプリ/Web)",
+  "target": null,
+  "area": null,
+  "hiyou": {
+   "satei": "無料(売り手の売却手数料0円)",
+   "tesuryo": "売り手0円(買い手側は44,000円税込等)",
+   "hikitori": "陸送費は車両・距離により異なる(任意)",
+   "shorui": "名義変更代行55,000円税込等(任意オプション)"
+  },
+  "uketsuke": null,
+  "nyukin": "エスクロー決済。引き渡し確認後3営業日以内に売り手へ振込",
+  "cancel": null,
+  "features": [
+   "チャット完結・いきなり電話なしと公式記載",
+   "売り手手数料0円",
+   "エスクローで減額トラブル防止",
+   "ここ来て！査定(希望日時場所に来訪)"
+  ],
+  "confirmed_date": "2026-08-07",
+  "note": "ブリーフの「エレウノ株式会社」は旧名義とみられ現公式は「ストリマ株式会社」表記(変更経緯は公式で明示確認できず)。対象車種・エリア・受付時間・キャンセル規定・古物商は公式では確認できず"
+ }
+]
