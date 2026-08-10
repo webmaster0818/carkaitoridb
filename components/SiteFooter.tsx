@@ -37,7 +37,7 @@ export default function SiteFooter() {
           <p className="font-display text-lg tracking-widest text-chalk">{SITE_NAME}</p>
           <p className="ml-3 hidden text-xs text-steel-400 sm:block">{SITE_TAGLINE}</p>
         </div>
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
           <FooterCol
             title="カテゴリで探す"
             links={[
@@ -52,6 +52,15 @@ export default function SiteFooter() {
               href: `/gyosha/${c.slug}/`,
               label: c.name,
             }))}
+          />
+          <FooterCol
+            title="状況別・ガイド"
+            links={[
+              { href: "/situation/souzoku/", label: "相続した車を売る" },
+              { href: "/situation/loan/", label: "ローンが残っている車を売る" },
+              { href: "/situation/shakenkire/", label: "車検切れの車を売る" },
+              { href: "/guide/shorui/", label: "売却の必要書類ガイド" },
+            ]}
           />
           <FooterCol
             title="サイトについて"
