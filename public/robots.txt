@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://carkaitoridb-deploy.pages.dev/sitemap.xml
+Sitemap: https://sell-car.net/sitemap.xml
