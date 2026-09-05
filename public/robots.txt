@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://car-kaitori.pages.dev/sitemap.xml
+Sitemap: https://carkaitoridb-deploy.pages.dev/sitemap.xml
