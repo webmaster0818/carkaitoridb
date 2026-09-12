@@ -21,7 +21,7 @@ const articleLd = {
   headline: TITLE,
   description: DESC,
   datePublished: "2026-08-10",
-  dateModified: "2026-08-10",
+  dateModified: "2026-09-12",
   mainEntityOfPage: `${SITE_URL}${PATH}`,
   author: { "@type": "Organization", name: OPERATOR.name },
   publisher: { "@type": "Organization", name: SITE_NAME },
@@ -187,6 +187,17 @@ export default function ShoruiGuidePage() {
           <p className="mt-3 text-xs text-steel-500">
             ※ 上記は一般的な必要書類の整理です。個別の取引で必要な書類は売却先の業者・手続き窓口の案内に従ってください。
           </p>
+          <div className="mt-6 border-l-2 border-vermilion bg-chalk-warm p-5">
+            <h3 className="font-display text-base text-steel-900">軽自動車だけを詳しく知りたい方へ</h3>
+            <p className="mt-2 text-[13px] leading-loose text-steel-700">
+              軽自動車は、印鑑の扱いだけでなく、手続きの窓口（軽自動車検査協会）、委任に使う書類の名称（申請依頼書）、車庫証明にあたる保管場所届出の地域差、廃車にする場合の手続き名まで普通車と異なります。軽自動車に絞った必要書類の一覧、普通車との違いの項目別整理、紛失時の再発行窓口は別ページにまとめました。
+            </p>
+            <p className="mt-3 text-[13px] leading-loose">
+              <Link href="/guide/keijidousha-shorui/" className="text-vermilion underline underline-offset-4">
+                詳しくは「軽自動車の売却に必要な書類｜認印で足りる理由と普通車との違い・再発行窓口」へ
+              </Link>
+            </p>
+          </div>
         </section>
 
         {/* 再発行 */}
@@ -258,6 +269,18 @@ export default function ShoruiGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-6">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
+            <li>
+              <Link href="/guide/keijidousha-shorui/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">軽自動車の売却に必要な書類</span>
+                <span className="mt-1 block text-xs text-steel-500">認印で足りる理由と普通車との違い</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/zeikin/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">車売却と税金の基礎知識</span>
+                <span className="mt-1 block text-xs text-steel-500">納税証明書まわりの前提知識</span>
+              </Link>
+            </li>
             <li>
               <Link href="/situation/souzoku/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">相続した車を売る手続きと注意点</span>
