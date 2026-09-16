@@ -387,6 +387,12 @@ export default function KeijidoushaShoruiPage() {
           <h2 className="section-title mb-6">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
+              <Link href="/kei/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">軽自動車の買取</span>
+                <span className="mt-1 block text-xs text-steel-500">売る前の全体像・査定で見られる点・売り先の選び方</span>
+              </Link>
+            </li>
+            <li>
               <Link href="/guide/shorui/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">車売却の必要書類 完全ガイド</span>
                 <span className="mt-1 block text-xs text-steel-500">普通車も含めた書類の全体像</span>

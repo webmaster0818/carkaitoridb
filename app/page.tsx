@@ -101,6 +101,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 軽自動車・メーカー別導線 */}
+      <section className="border-y border-chalk-line bg-chalk-warm">
+        <div className="mx-auto max-w-site px-4 py-16 md:py-20">
+          <p className="kicker mb-3">KEI CARS &amp; MAKERS</p>
+          <h2 className="section-title mb-4">軽自動車・メーカー別に確認する</h2>
+          <p className="mb-10 max-w-2xl text-sm leading-loose text-steel-600">
+            軽自動車は普通車と制度が別立てで、手続きの窓口も必要な印鑑も異なります。メーカー別のページでは、車検証で確認する項目と査定前の準備を整理しています。車種名・スペック・買取価格の目安は扱いません。
+          </p>
+          <ul className="grid gap-3 text-sm md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { href: "/kei/", title: "軽自動車の買取", desc: "売る前の全体像と売り先の選び方" },
+              { href: "/guide/keijidousha-shorui/", title: "軽自動車の売却に必要な書類", desc: "認印で足りる理由と再発行窓口" },
+              { href: "/maker/suzuki/", title: "スズキ車の買取", desc: "軽自動車として売るときの確認事項" },
+              { href: "/maker/daihatsu/", title: "ダイハツ車の買取", desc: "乗用・貨物の登録区分から確認する" },
+              { href: "/maker/toyota/", title: "トヨタ車の買取", desc: "普通車の書類と下取りとの違い" },
+              { href: "/maker/honda/", title: "ホンダ車の買取", desc: "軽と普通車が混在する前提の準備" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="block border border-chalk-line bg-chalk-card px-4 py-4 transition-colors hover:border-vermilion"
+                >
+                  <span className="font-display text-steel-900">{l.title}</span>
+                  <span className="mt-1 block text-xs text-steel-500">{l.desc}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* 比較表導線 */}
       <section className="bg-steel-800 text-chalk">
         <div className="mx-auto max-w-site px-4 py-16 md:py-20">
