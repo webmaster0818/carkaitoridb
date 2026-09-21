@@ -12,6 +12,7 @@ import {
   serviceTypeOf,
 } from "@/lib/companies";
 import { CHECKED_LABEL } from "@/lib/site";
+import { getProcedure } from "@/lib/procedures";
 
 export function generateStaticParams() {
   return companies.map((c) => ({ slug: c.slug }));
@@ -41,6 +42,7 @@ export default async function GyoshaPage({
   const cta = ctaFor(c);
   const faqs = companyFaq(c);
   const cats = categoriesOf(c);
+  const proc = getProcedure(slug);
 
   const quickRows: { label: string; value: string }[] = [
     { label: "受付", value: fmt(c.uketsuke) },
@@ -102,6 +104,19 @@ export default async function GyoshaPage({
               8社比較表で他社と並べる
             </Link>
           </div>
+          {proc && (
+            <div className="mt-6 border border-chalk-line bg-chalk-card px-5 py-4">
+              <p className="text-sm font-bold text-steel-900">{c.name}の手続きを詳しく見る</p>
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                <Link href={`/gyosha/${c.slug}/nagare/`} className="btn-ghost">
+                  買取の流れ（{proc.flow.length}ステップ）
+                </Link>
+                <Link href={`/gyosha/${c.slug}/shorui/`} className="btn-ghost">
+                  必要書類（普通車{proc.docsNormal.length}点・軽{proc.docsKei.length}点）
+                </Link>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* 特徴 */}

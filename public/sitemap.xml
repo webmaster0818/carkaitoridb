@@ -42,4 +42,52 @@
   <url><loc>https://sell-car.net/situation/shakenkire/</loc><lastmod>2026-09-12</lastmod></url>
   <url><loc>https://sell-car.net/guide/shorui/</loc><lastmod>2026-09-12</lastmod></url>
   <url><loc>https://sell-car.net/guide/keijidousha-shorui/</loc><lastmod>2026-09-12</lastmod></url>
+  <url>
+    <loc>https://sell-car.net/gyosha/gulliver/nagare/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sell-car.net/gyosha/gulliver/shorui/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sell-car.net/gyosha/apple/nagare/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sell-car.net/gyosha/apple/shorui/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sell-car.net/gyosha/nextage/nagare/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sell-car.net/gyosha/nextage/shorui/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sell-car.net/gyosha/carseven/nagare/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sell-car.net/gyosha/carseven/shorui/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
