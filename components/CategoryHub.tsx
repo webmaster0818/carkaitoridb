@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CompanyCard from "@/components/CompanyCard";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { Category, categories, getCompany } from "@/lib/companies";
-import { CHECKED_LABEL } from "@/lib/site";
+import { CHECKED_RANGE_LABEL } from "@/lib/site";
 
 export interface HubSectionItem {
   t: string;
@@ -75,7 +75,7 @@ export default function CategoryHub({
         <section className="mt-14">
           <h2 className="section-title mb-2">このカテゴリで掲載中の業者</h2>
           <p className="mb-6 text-sm leading-loose text-steel-600">
-            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_LABEL}）。「公式では確認できず」の項目は、公式サイト上に記載を発見できなかったことを意味します。
+            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_RANGE_LABEL}。各社の確認日は業者ページに記載）。「公式では確認できず」の項目は、公式サイト上に記載を発見できなかったことを意味します。
           </p>
           <div className="grid gap-5 lg:grid-cols-2">
             {hubCompanies.map((c) => (
@@ -119,7 +119,7 @@ export default function CategoryHub({
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">全カテゴリの掲載業者を同じ物差しで比較</span>
               </Link>
             </li>

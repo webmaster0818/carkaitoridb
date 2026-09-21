@@ -180,7 +180,7 @@ export default function MakerToyotaPage() {
         },
         {
           href: "/compare/",
-          title: "車買取8社の統一比較表",
+          title: "車買取27社の統一比較表",
           desc: "査定料・入金・キャンセル規定を同じ物差しで",
         },
       ]}

@@ -169,11 +169,11 @@ export default function GuideKaitoriVsShitadoriPage() {
         <section className="mt-14 border border-steel-200 bg-chalk-warm p-6">
           <h2 className="font-display text-lg text-steel-900">買取を検討するなら、条件を同じ物差しで</h2>
           <p className="mt-3 text-sm leading-loose text-steel-700">
-            当サイトでは、掲載8社の査定料・引取費用・入金タイミング・キャンセル規定を公式サイトで一次確認し、確認日つきの統一フォーマットで比較しています。買取という選択肢を検討する際の物差しとしてご利用ください。
+            当サイトでは、掲載27社の査定料・引取費用・入金タイミング・キャンセル規定を公式サイトで一次確認し、確認日つきの統一フォーマットで比較しています。買取という選択肢を検討する際の物差しとしてご利用ください。
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <Link href="/compare/" className="btn-primary">
-              8社比較表を見る
+              27社比較表を見る
             </Link>
             <Link href="/shindan/" className="btn-ghost">
               売り方診断（4問）を試す
@@ -221,8 +221,8 @@ export default function GuideKaitoriVsShitadoriPage() {
             </li>
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">同じ物差しで8社の条件を並べる</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
+                <span className="mt-1 block text-xs text-steel-500">同じ物差しで27社の条件を並べる</span>
               </Link>
             </li>
           </ul>

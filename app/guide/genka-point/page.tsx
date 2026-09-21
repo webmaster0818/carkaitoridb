@@ -161,11 +161,11 @@ export default function GuideGenkaPointPage() {
         <section className="mt-14 border border-steel-200 bg-chalk-warm p-6">
           <h2 className="font-display text-lg text-steel-900">準備ができたら、条件を同じ物差しで比べる</h2>
           <p className="mt-3 text-sm leading-loose text-steel-700">
-            減額に関わるのは車の状態だけではありません。契約後の減額（二重査定）やキャンセルに関する規定は業者ごとに異なります。当サイトでは掲載8社の査定料・引取費用・入金タイミング・キャンセル規定を公式サイトで一次確認し、確認日つきで比較しています。
+            減額に関わるのは車の状態だけではありません。契約後の減額（二重査定）やキャンセルに関する規定は業者ごとに異なります。当サイトでは掲載27社の査定料・引取費用・入金タイミング・キャンセル規定を公式サイトで一次確認し、確認日つきで比較しています。
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <Link href="/compare/" className="btn-primary">
-              8社比較表を見る
+              27社比較表を見る
             </Link>
             <Link href="/shindan/" className="btn-ghost">
               売り方診断（4問）を試す
@@ -213,8 +213,8 @@ export default function GuideGenkaPointPage() {
             </li>
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">同じ物差しで8社の条件を並べる</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
+                <span className="mt-1 block text-xs text-steel-500">同じ物差しで27社の条件を並べる</span>
               </Link>
             </li>
           </ul>

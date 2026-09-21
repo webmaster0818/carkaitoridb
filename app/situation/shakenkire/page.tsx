@@ -458,7 +458,7 @@ export default function ShakenkirePage() {
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href="/haisha/" className="btn-primary">廃車・事故車買取のページを見る</Link>
-            <Link href="/compare/" className="btn-ghost">掲載8社の比較表を見る</Link>
+            <Link href="/compare/" className="btn-ghost">掲載27社の比較表を見る</Link>
           </div>
         </section>
 
@@ -514,7 +514,7 @@ export default function ShakenkirePage() {
             </li>
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">引取条件を同じ物差しで比較</span>
               </Link>
             </li>

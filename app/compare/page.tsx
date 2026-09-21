@@ -9,12 +9,12 @@ import {
   pickupSummary,
   serviceTypeOf,
 } from "@/lib/companies";
-import { CHECKED_LABEL } from "@/lib/site";
+import { CHECKED_RANGE_LABEL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "車買取8社の比較表【査定料・入金・キャンセル規定を公式確認】",
+  title: "車買取27社の比較表【査定料・入金・キャンセル規定を公式確認】",
   description:
-    "外車マスター・外車王・旧車王・ハイシャル・トラック王国・BeeTruck・セルカ・ストリマの8社を統一フォーマットで比較。査定料・手数料・引取・書類・受付時間・入金・キャンセル規定・運営会社と古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
+    "大手買取店・一括査定・オークション型・廃車買取・外車/旧車/トラック専門の車買取27社を統一フォーマットで比較。査定料・手数料・引取・書類・受付時間・入金・キャンセル規定・運営会社と古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
   alternates: { canonical: "/compare/" },
 };
 
@@ -24,17 +24,17 @@ export default function ComparePage() {
       <Breadcrumbs
         items={[
           { name: "ホーム", path: "/" },
-          { name: "8社比較表", path: "/compare/" },
+          { name: "27社比較表", path: "/compare/" },
         ]}
       />
       <div className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">COMPARISON TABLE</p>
         <h1 className="font-display text-2xl leading-snug text-steel-900 md:text-4xl">
-          車買取8社の統一比較表
+          車買取27社の統一比較表
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          掲載8社のサービス条件を、各社公式サイトの一次確認に基づいて同じ物差しで並べています。
-          <strong className="text-steel-800">確認日: {CHECKED_LABEL}</strong>
+          掲載27社のサービス条件を、各社公式サイトの一次確認に基づいて同じ物差しで並べています。
+          <strong className="text-steel-800">確認日: {CHECKED_RANGE_LABEL}（各社の確認日は業者ページに記載）</strong>
           。公式サイトで確認できなかった項目は「公式では確認できず」とそのまま表示しています。最新の条件・詳細な規定は必ず各社公式サイトでご確認ください。
         </p>
 
@@ -93,7 +93,7 @@ export default function ComparePage() {
           </table>
         </div>
         <p className="mt-3 text-xs text-steel-500">
-          ※ 横にスクロールできます。表中の「公式では確認できず」は、{CHECKED_LABEL}
+          ※ 横にスクロールできます。表中の「公式では確認できず」は、各社の確認日
           時点の当サイト調査で公式サイト上に記載を発見できなかったことを意味します（サービスが存在しないという意味ではありません）。
         </p>
 

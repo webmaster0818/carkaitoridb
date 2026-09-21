@@ -185,7 +185,7 @@ export default function LoanPage() {
             <div className="border border-chalk-line bg-chalk-card p-5">
               <h3 className="font-display text-base text-steel-900">入金タイミングの公式記載を確認する</h3>
               <p className="mt-2 text-[13px] leading-loose text-steel-700">
-                当サイト掲載の<Link href="/gyosha/gaisha-master/" className="text-vermilion underline underline-offset-4">外車マスター</Link>は「ローンなし車両は引取・書類提出後最短翌日」に入金と公式サイトに記載しています（{CHECKED_LABEL}確認）。裏を返せば、ローンが残っている車両は所有権解除などの手続きを挟むぶん、入金までの流れが変わるということです。各社の入金・キャンセル規定は<Link href="/compare/" className="text-vermilion underline underline-offset-4">8社比較表</Link>で同じ物差しで確認できます。
+                当サイト掲載の<Link href="/gyosha/gaisha-master/" className="text-vermilion underline underline-offset-4">外車マスター</Link>は「ローンなし車両は引取・書類提出後最短翌日」に入金と公式サイトに記載しています（{CHECKED_LABEL}確認）。裏を返せば、ローンが残っている車両は所有権解除などの手続きを挟むぶん、入金までの流れが変わるということです。各社の入金・キャンセル規定は<Link href="/compare/" className="text-vermilion underline underline-offset-4">27社比較表</Link>で同じ物差しで確認できます。
               </p>
             </div>
             <div className="border border-chalk-line bg-chalk-card p-5">
@@ -196,7 +196,7 @@ export default function LoanPage() {
             </div>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link href="/compare/" className="btn-primary">掲載8社の比較表を見る</Link>
+            <Link href="/compare/" className="btn-primary">掲載27社の比較表を見る</Link>
             <Link href="/shindan/" className="btn-ghost">売り方診断（4問）で確認する</Link>
           </div>
         </section>
@@ -241,7 +241,7 @@ export default function LoanPage() {
             </li>
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">入金・キャンセル規定を同じ物差しで比較</span>
               </Link>
             </li>

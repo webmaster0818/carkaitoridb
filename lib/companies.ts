@@ -121,7 +121,7 @@ export const categories: Category[] = [
     name: "廃車・事故車・不動車の買取",
     short: "廃車・事故車",
     lead: "動かない車・事故車・車検切れの車にも売り方があります。廃車買取サービスの条件と手続きの一般知識をまとめました。",
-    companySlugs: ["haishar"],
+    companySlugs: ["haishar", "carnext", "haisyahonpo", "tau"],
   },
   {
     slug: "kyusha",
@@ -136,8 +136,8 @@ export const categories: Category[] = [
     path: "/auction/",
     name: "オークション型・電話なしで売る",
     short: "オークション型",
-    lead: "一括査定の営業電話を避けたい人向けに、オークション型・チャット完結型のサービス2社の公式記載を一次確認で整理しました。",
-    companySlugs: ["sellca", "strema"],
+    lead: "一括査定の営業電話を避けたい人向けに、オークション型・チャット完結型のサービス4社の公式記載を一次確認で整理しました。",
+    companySlugs: ["sellca", "strema", "rakuten-car-kaitori", "ucarpac"],
   },
 ];
 

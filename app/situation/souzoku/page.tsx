@@ -193,7 +193,7 @@ export default function SouzokuPage() {
             </div>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link href="/compare/" className="btn-primary">掲載8社の比較表を見る</Link>
+            <Link href="/compare/" className="btn-primary">掲載27社の比較表を見る</Link>
             <Link href="/shindan/" className="btn-ghost">売り方診断（4問）で確認する</Link>
           </div>
         </section>
@@ -244,7 +244,7 @@ export default function SouzokuPage() {
             </li>
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">掲載全社を同じ物差しで比較</span>
               </Link>
             </li>

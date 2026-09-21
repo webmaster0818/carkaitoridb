@@ -42,7 +42,7 @@ export default function SiteFooter() {
             title="カテゴリで探す"
             links={[
               ...categories.map((c) => ({ href: c.path, label: c.name })),
-              { href: "/compare/", label: "掲載8社の比較表" },
+              { href: "/compare/", label: "掲載27社の比較表" },
               { href: "/shindan/", label: "売り方診断（4問）" },
             ]}
           />

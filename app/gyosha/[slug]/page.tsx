@@ -11,7 +11,7 @@ import {
   getCompany,
   serviceTypeOf,
 } from "@/lib/companies";
-import { CHECKED_LABEL } from "@/lib/site";
+import { jaDate, jaMonth } from "@/lib/site";
 import { getProcedure } from "@/lib/procedures";
 
 export function generateStaticParams() {
@@ -26,8 +26,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCompany(slug);
   return {
-    title: `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【2026年8月公式確認】`,
-    description: `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認（${CHECKED_LABEL}）。確認できなかった項目は「公式では確認できず」と正直に記載しています。`,
+    title: `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`,
+    description: `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。確認できなかった項目は「公式では確認できず」と正直に記載しています。`,
     alternates: { canonical: `/gyosha/${c.slug}/` },
   };
 }
@@ -62,17 +62,17 @@ export default async function GyoshaPage({
       <Breadcrumbs
         items={[
           { name: "ホーム", path: "/" },
-          { name: "8社比較表", path: "/compare/" },
+          { name: "27社比較表", path: "/compare/" },
           { name: c.name, path: `/gyosha/${c.slug}/` },
         ]}
       />
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">COMPANY FACT SHEET</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          {c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【2026年8月公式確認】
+          {c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【{jaMonth(c.confirmed_date)}公式確認】
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          {c.name}のサービス条件を、公式サイトの記載に基づいて一次確認しました（確認日: {CHECKED_LABEL}）。
+          {c.name}のサービス条件を、公式サイトの記載に基づいて一次確認しました（確認日: {jaDate(c.confirmed_date)}）。
           サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。
         </p>
 
@@ -101,7 +101,7 @@ export default async function GyoshaPage({
               {c.name}の公式サイトを見る
             </a>
             <Link href="/compare/" className="btn-ghost">
-              8社比較表で他社と並べる
+              27社比較表で他社と並べる
             </Link>
           </div>
           {proc && (
@@ -133,7 +133,7 @@ export default async function GyoshaPage({
             ))}
           </ul>
           <p className="mt-3 text-xs text-steel-500">
-            ※ いずれも{c.name}公式サイトの記載に基づきます（{CHECKED_LABEL}確認）。当サイト独自の評価ではありません。
+            ※ いずれも{c.name}公式サイトの記載に基づきます（{jaDate(c.confirmed_date)}確認）。当サイト独自の評価ではありません。
           </p>
         </section>
 
@@ -193,7 +193,7 @@ export default async function GyoshaPage({
         <section className="mt-14 border border-steel-200 bg-chalk-warm p-6">
           <h2 className="font-display text-lg text-steel-900">この情報の検証について</h2>
           <ul className="mt-4 space-y-2 text-[13px] leading-loose text-steel-700">
-            <li>・本ページの条件は、{c.name}公式サイト（{c.official_url}）および運営会社ページを{CHECKED_LABEL}に確認して作成しています。</li>
+            <li>・本ページの条件は、{c.name}公式サイト（{c.official_url}）および運営会社ページを{jaDate(c.confirmed_date)}に確認して作成しています。</li>
             <li>・公式サイトで確認できなかった項目は「公式では確認できず」と表示し、推測で補完していません。</li>
             <li>・口コミ・体験談の創作、架空の買取金額・実績の掲載は行いません。</li>
             <li>・条件は変更される場合があります。契約前に必ず公式サイト・契約書面で最新の内容をご確認ください。</li>
@@ -209,8 +209,8 @@ export default async function GyoshaPage({
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">同じ物差しで8社の条件を並べる</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
+                <span className="mt-1 block text-xs text-steel-500">同じ物差しで27社の条件を並べる</span>
               </Link>
             </li>
             {cats.map((cat) => (

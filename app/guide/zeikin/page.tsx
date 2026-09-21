@@ -151,11 +151,11 @@ export default function GuideZeikinPage() {
         <section className="mt-14 border border-steel-200 bg-chalk-warm p-6">
           <h2 className="font-display text-lg text-steel-900">税金の扱いも含めて、条件を同じ物差しで</h2>
           <p className="mt-3 text-sm leading-loose text-steel-700">
-            自動車税や還付金の扱いは、査定料・入金タイミング・キャンセル規定と同じく契約前に確認すべき条件の1つです。当サイトでは掲載8社の条件を公式サイトで一次確認し、確認日つきで比較しています。廃車を検討している場合は廃車買取カテゴリもご覧ください。
+            自動車税や還付金の扱いは、査定料・入金タイミング・キャンセル規定と同じく契約前に確認すべき条件の1つです。当サイトでは掲載27社の条件を公式サイトで一次確認し、確認日つきで比較しています。廃車を検討している場合は廃車買取カテゴリもご覧ください。
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <Link href="/compare/" className="btn-primary">
-              8社比較表を見る
+              27社比較表を見る
             </Link>
             <Link href="/shindan/" className="btn-ghost">
               売り方診断（4問）を試す

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SITE_NAME } from "@/lib/site";
 
 const nav = [
-  { href: "/compare/", label: "8社比較表" },
+  { href: "/compare/", label: "27社比較表" },
   { href: "/gaisha/", label: "外車" },
   { href: "/truck/", label: "トラック" },
   { href: "/haisha/", label: "廃車・事故車" },

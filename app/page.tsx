@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { categories, companies } from "@/lib/companies";
-import { CHECKED_LABEL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { CHECKED_RANGE_LABEL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}｜${SITE_TAGLINE}`,
   description:
-    "車買取8社を公式サイトで一次確認し、査定料・入金・キャンセル規定・古物商許可を確認日つきで比較。外車・トラック重機・廃車事故車・旧車・オークション型のカテゴリ別に、中立の視点で「どう売るか」を先に整理できます。",
+    "車買取27社を公式サイトで一次確認し、査定料・入金・キャンセル規定・古物商許可を確認日つきで比較。外車・トラック重機・廃車事故車・旧車・オークション型のカテゴリ別に、中立の視点で「どう売るか」を先に整理できます。",
   alternates: { canonical: "/" },
 };
 
@@ -33,7 +33,7 @@ export default function HomePage() {
             <span className="text-vermilion">中立</span>の車買取ナビ。
           </h1>
           <p className="mt-8 max-w-xl text-sm leading-loose text-steel-200 md:text-base">
-            一括査定に丸投げする前に、あなたの車は「どこで・どう売るのが合うか」を先に整理しませんか。掲載8社のサービス条件は、すべて各社公式サイトを一次確認し、確認日（{CHECKED_LABEL}）を明記。確認できなかった項目は「公式では確認できず」と正直に書きます。
+            一括査定に丸投げする前に、あなたの車は「どこで・どう売るのが合うか」を先に整理しませんか。掲載27社のサービス条件は、すべて各社公式サイトを一次確認し、確認日（{CHECKED_RANGE_LABEL}）を各社ごとに明記。確認できなかった項目は「公式では確認できず」と正直に書きます。
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link href="/shindan/" className="btn-primary">
@@ -43,7 +43,7 @@ export default function HomePage() {
               href="/compare/"
               className="btn-ghost !border-steel-500 !bg-transparent !text-chalk hover:!border-vermilion hover:!text-vermilion"
             >
-              8社の比較表を見る
+              27社の比較表を見る
             </Link>
           </div>
         </div>
@@ -139,10 +139,10 @@ export default function HomePage() {
             <div>
               <p className="kicker mb-3">COMPARISON</p>
               <h2 className="font-display text-2xl leading-snug md:text-3xl">
-                掲載8社を、同じ物差しで並べる
+                掲載27社を、同じ物差しで並べる
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-loose text-steel-200">
-                査定料・手数料・引取と書類・受付時間・入金タイミング・キャンセル規定・運営会社と古物商許可番号。8社すべてを統一フォーマットで比較しています（{CHECKED_LABEL}公式確認）。
+                査定料・手数料・引取と書類・受付時間・入金タイミング・キャンセル規定・運営会社と古物商許可番号。27社すべてを統一フォーマットで比較しています（{CHECKED_RANGE_LABEL}公式確認）。
               </p>
             </div>
             <Link href="/compare/" className="btn-primary mt-8 shrink-0 md:mt-0">
@@ -172,7 +172,7 @@ export default function HomePage() {
           {[
             {
               t: "公式サイトの一次確認",
-              d: `掲載する条件はすべて各社公式サイトで確認し、確認日を明記します。今回の確認日は${CHECKED_LABEL}です。`,
+              d: `掲載する条件はすべて各社公式サイトで確認し、確認日を明記します。現在の掲載社は${CHECKED_RANGE_LABEL}に確認しています。`,
             },
             {
               t: "確認できないことは書かない",

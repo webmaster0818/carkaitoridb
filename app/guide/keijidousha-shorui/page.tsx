@@ -424,7 +424,7 @@ export default function KeijidoushaShoruiPage() {
             </li>
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">書類代行の有無を同じ物差しで比較</span>
               </Link>
             </li>

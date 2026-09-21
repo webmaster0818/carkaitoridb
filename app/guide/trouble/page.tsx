@@ -189,11 +189,11 @@ export default function GuideTroublePage() {
         <section className="mt-14 border border-steel-200 bg-chalk-warm p-6">
           <h2 className="font-display text-lg text-steel-900">規定を確認してから業者を選ぶ</h2>
           <p className="mt-3 text-sm leading-loose text-steel-700">
-            トラブル予防の第一歩は、キャンセル規定・減額規定を公開している業者を選び、契約前に内容を確認することです。当サイトでは掲載8社のキャンセル規定・入金タイミング・査定料を公式サイトで一次確認し、確認できなかった項目は「公式では確認できず」と正直に記載しています。
+            トラブル予防の第一歩は、キャンセル規定・減額規定を公開している業者を選び、契約前に内容を確認することです。当サイトでは掲載27社のキャンセル規定・入金タイミング・査定料を公式サイトで一次確認し、確認できなかった項目は「公式では確認できず」と正直に記載しています。
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <Link href="/compare/" className="btn-primary">
-              8社比較表でキャンセル規定を見る
+              27社比較表でキャンセル規定を見る
             </Link>
             <Link href="/shindan/" className="btn-ghost">
               売り方診断（4問）を試す
@@ -241,8 +241,8 @@ export default function GuideTroublePage() {
             </li>
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">車買取8社の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">同じ物差しで8社の条件を並べる</span>
+                <span className="font-display text-steel-900">車買取27社の統一比較表</span>
+                <span className="mt-1 block text-xs text-steel-500">同じ物差しで27社の条件を並べる</span>
               </Link>
             </li>
           </ul>
