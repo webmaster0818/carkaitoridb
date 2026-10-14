@@ -26,8 +26,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCompany(slug);
   return {
-    title: `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`,
-    description: (() => {
+    title: c.seo_title ?? `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`,
+    description: c.seo_description ?? (() => {
       const base = `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`;
       const full = `${base}確認できなかった項目は「公式では確認できず」と正直に記載しています。`;
       if (full.length <= 160) return full;
@@ -75,8 +75,18 @@ export default async function GyoshaPage({
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">COMPANY FACT SHEET</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          {c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【{jaMonth(c.confirmed_date)}公式確認】
+          {c.h1 ?? `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`}
         </h1>
+        {c.updated_date && (
+          <p className="mt-3 text-xs text-steel-500">
+            最終更新: <time dateTime={c.updated_date}>{jaDate(c.updated_date)}</time>
+          </p>
+        )}
+        {c.lead_answer && (
+          <div className="mt-5 max-w-3xl border-l-4 border-vermilion bg-chalk-card px-5 py-4">
+            <p className="text-[15px] font-bold leading-loose text-steel-900">{c.lead_answer}</p>
+          </div>
+        )}
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           {c.name}のサービス条件を、公式サイトの記載に基づいて一次確認しました（確認日: {jaDate(c.confirmed_date)}）。
           サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。

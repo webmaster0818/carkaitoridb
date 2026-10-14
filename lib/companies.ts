@@ -30,6 +30,16 @@ export interface Company {
   features: string[];
   confirmed_date: string;
   note?: string | null;
+  /** 業者別SEO上書き（未指定なら共通テンプレート） */
+  seo_title?: string;
+  seo_description?: string;
+  h1?: string;
+  /** h1直下に置く検索語への直接回答（出典・確認日を本文に含める） */
+  lead_answer?: string;
+  /** 表示上の最終更新日（YYYY-MM-DD） */
+  updated_date?: string;
+  /** 業者別の追加FAQ（公式確認済みの内容のみ。共通FAQの前に出す） */
+  extra_faq?: { q: string; a: string }[];
 }
 
 export const companies = raw as unknown as Company[];
@@ -156,6 +166,7 @@ export function companyFaq(c: Company): { q: string; a: string }[] {
   const naAnswer = (item: string) =>
     `${item}については、公式サイトでは確認できませんでした（${c.confirmed_date}時点の当サイト調査）。契約前に${c.name}へ直接確認することをおすすめします。`;
   return [
+    ...(c.extra_faq ?? []),
     {
       q: `${c.name}の査定に費用はかかりますか？`,
       a: isNA(c.hiyou.satei)
