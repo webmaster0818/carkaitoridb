@@ -27,7 +27,13 @@ export async function generateMetadata({
   const c = getCompany(slug);
   return {
     title: `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`,
-    description: `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。確認できなかった項目は「公式では確認できず」と正直に記載しています。`,
+    description: (() => {
+      const base = `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`;
+      const full = `${base}確認できなかった項目は「公式では確認できず」と正直に記載しています。`;
+      if (full.length <= 160) return full;
+      const mid = `${base}未確認の項目は「公式では確認できず」と記載。`;
+      return mid.length <= 160 ? mid : base;
+    })(),
     alternates: { canonical: `/gyosha/${c.slug}/` },
   };
 }
