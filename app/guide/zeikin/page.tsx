@@ -5,9 +5,9 @@ import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { CHECKED_LABEL, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "車を売ったときの自動車税・還付の仕組み｜売却と廃車で扱いが変わる理由",
+  title: "車の税金は返金される？売却は還付なし・廃車なら月割で戻る｜計算例と重量税【2026年10月確認】",
   description:
-    "自動車税（種別割）は4月1日時点の所有者に課税される仕組みと、売却（移転登録）では還付されず抹消登録（廃車）なら普通車は月割還付がある一般知識を解説。軽自動車税に月割還付がないこと、リサイクル料金の扱いも整理し、個別の税務は都道府県税事務所への確認を案内します。",
+    "車を売っても自動車税は都道府県から返金されません（東京都主税局FAQ）。廃車（抹消登録）なら普通車は翌月以降分が月割で還付、軽自動車は還付なし。2.0Lの車を9月に廃車した場合の計算例（18,000円）、重量税の還付条件、還付金が届くまでの期間を公的機関の記載で整理。",
   alternates: { canonical: "/guide/zeikin/" },
 };
 
@@ -16,17 +16,43 @@ const PATH = "/guide/zeikin/";
 const articleLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "車を売ったときの自動車税・還付の仕組み",
+  headline: "車の税金は返金される？売却と廃車で違う自動車税・重量税の還付の仕組み",
   description:
     "自動車税（種別割）の課税の仕組みと、売却・廃車での還付の扱い、リサイクル料金の一般知識を解説する記事。",
   datePublished: "2026-08-10",
-  dateModified: "2026-08-10",
+  dateModified: "2026-10-15",
   author: { "@type": "Organization", name: SITE_NAME },
   publisher: { "@type": "Organization", name: "株式会社MediaX" },
   mainEntityOfPage: `${SITE_URL}${PATH}`,
 };
 
+const SRC_TOKYO_FAQ = "https://www.tax.metro.tokyo.lg.jp/shitsumon/automobiles/j";
+const SRC_TOKYO_RATE = "https://www.tax.metro.tokyo.lg.jp/kazei/automobiles/shubetsu";
+const SRC_NTA = "https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7193.htm";
+
+/** 東京都主税局「自動車税種別割」7 税率（年額）自家用乗用車の抜粋（2026-10-15確認・グリーン化特例の適用を受けない車） */
+const RATES: { cc: string; after: string; before: string }[] = [
+  { cc: "1リットル以下", after: "25,000", before: "29,500" },
+  { cc: "1リットル超〜1.5リットル以下", after: "30,500", before: "34,500" },
+  { cc: "1.5リットル超〜2リットル以下", after: "36,000", before: "39,500" },
+  { cc: "2リットル超〜2.5リットル以下", after: "43,500", before: "45,000" },
+  { cc: "2.5リットル超〜3リットル以下", after: "50,000", before: "51,000" },
+  { cc: "3リットル超〜3.5リットル以下", after: "57,000", before: "58,000" },
+  { cc: "3.5リットル超〜4リットル以下", after: "65,500", before: "66,500" },
+  { cc: "4リットル超〜4.5リットル以下", after: "75,500", before: "76,500" },
+  { cc: "4.5リットル超〜6リットル以下", after: "87,000", before: "88,000" },
+  { cc: "6リットル超", after: "110,000", before: "111,000" },
+];
+
 const faqs = [
+  {
+    q: "車の税金は返金されますか？",
+    a: "売却（名義変更）では、自動車税は都道府県から返金されません。東京都主税局のFAQは「年度の途中で移転登録（名義変更）された場合でも、前の所有者の方に1年分が課税され、新しい所有者の方には翌年度から課税されます」としています。返金（還付）されるのは普通車を廃車（抹消登録）した場合で、抹消登録した月の翌月以降の分が月割で戻ります。軽自動車税には月割還付がありません。解体を伴う廃車で車検が1か月以上残っていれば、自動車重量税も申請で還付されます（国税庁タックスアンサーNo.7193）。いずれも2026年10月15日確認。",
+  },
+  {
+    q: "廃車にした自動車税の還付金はいつ、どうやって受け取れますか？",
+    a: "東京都の場合、還付金が発生すると納税義務者に自動的に通知が送られ、別途の還付申請は不要です。通知が届くまでは抹消登録等の確認から1か月程度で、5万円以下はゆうちょ銀行の「振替払出証書」を郵便局等で換金、5万円超は口座振替依頼書を返送して振込で受け取ります。都税の未納がある場合は未納額に充当されます（東京都主税局「自動車と税金」FAQ Q31・2026年10月15日確認）。他の道府県の運用は各県税事務所に確認してください。",
+  },
   {
     q: "年度の途中で車を売ったら、払った自動車税は戻ってきますか？",
     a: "売却（移転登録）の場合、都道府県からの月割還付はないというのが一般的な制度の扱いです。そのかわり、残り期間に相当する額を買取価格に織り込む形で調整する商慣行が広く行われています。査定額に税金相当分が含まれているかどうかは業者・契約によって異なるため、契約前に「自動車税の未経過分の扱い」を確認しておきましょう。個別の課税・還付の判断は、お住まいの都道府県税事務所にご確認ください。",
@@ -59,8 +85,16 @@ export default function GuideZeikinPage() {
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">TAX AND REFUND</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          車を売ったときの自動車税・還付の仕組み
+          車の税金は返金される？売却と廃車で違う自動車税・重量税の還付の仕組み
         </h1>
+        <p className="mt-3 text-xs text-steel-500">
+          最終更新: <time dateTime="2026-10-15">2026年10月15日</time>（東京都主税局・国税庁の記載を確認）
+        </p>
+        <div className="mt-5 max-w-3xl border-l-4 border-vermilion bg-chalk-card px-5 py-4">
+          <p className="text-[15px] font-bold leading-loose text-steel-900">
+            結論：車を売った（名義変更した）だけでは、払った自動車税は都道府県から返金されません。返金（還付）されるのは普通車を廃車（抹消登録）したときで、抹消した月の翌月から3月までの分が月割で戻ります（例：年36,000円の2.0Lの車を9月に抹消→10〜3月の6か月分18,000円）。軽自動車税は廃車しても戻りません。解体して永久抹消し車検が1か月以上残っていれば、自動車重量税も申請で戻ります（出典：東京都主税局「自動車と税金」FAQ Q10・Q12・Q30、国税庁タックスアンサーNo.7193・確認日 2026-10-15）。
+          </p>
+        </div>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           車を手放すとき、「払った自動車税は戻るのか」は多くの人が迷うポイントです。結論から言うと、売却か廃車か、普通車か軽自動車かで扱いが変わります。このページでは制度の一般的な仕組みを整理します。なお、当サイトは税務の専門機関ではないため個別の判断は行いません。ご自身のケースの正確な取り扱いは、お住まいの都道府県税事務所（軽自動車は市区町村）にご確認ください。
         </p>
@@ -115,6 +149,75 @@ export default function GuideZeikinPage() {
           </p>
           <p className="mt-4 text-sm leading-loose text-steel-700">
             また、4月1日をまたいで所有していると翌年度分が課税されるため、軽自動車を手放す時期を考えるときは、この基準日の存在を知っておくと判断材料になります。ただし、税金だけを理由に売却時期を決めるのが有利とは限りません。車の状態や需要の変動もからむため、当サイトでは時期の損得の断定はしません。個別の課税の取り扱いは市区町村の窓口にご確認ください。
+          </p>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="section-title mb-5">廃車で戻る自動車税の計算方法と計算例</h2>
+          <p className="text-sm leading-loose text-steel-700">
+            東京都主税局は「年度の途中に自動車を抹消登録（廃車）された場合は、抹消登録した月の翌月から月割で減額します」と説明しています。廃車した日は「業者等に自動車を引き渡した日ではなく、運輸支局や自動車検査登録事務所で実際に抹消登録した日」です（
+            <a href={SRC_TOKYO_FAQ} rel="nofollow noopener" target="_blank" className="text-vermilion underline underline-offset-4">東京都主税局 FAQ Q12</a>・2026年10月15日確認）。
+          </p>
+          <div className="mt-5 border border-chalk-line bg-chalk-card px-5 py-4 text-sm leading-loose text-steel-800">
+            <p className="font-bold">還付額の目安 ＝ 年税額 ÷ 12 × 抹消登録した月の翌月から3月までの月数</p>
+            <p className="mt-2">例：令和元年10月1日以後に初回登録した自家用の2.0Lの乗用車（年36,000円）を9月に抹消登録 → 10月〜3月の6か月分 ＝ 36,000 ÷ 12 × 6 ＝ <strong>18,000円</strong></p>
+            <p className="mt-2 text-xs text-steel-500">※3月に抹消した場合は翌月以降の残りがないため還付はありません。グリーン化特例・減免の適用車、端数処理、都税の未納がある場合（未納額に充当）は実額が変わります。正確な額は都道府県税事務所の通知で確認してください。</p>
+          </div>
+          <h3 className="mt-8 font-display text-base text-steel-900">自家用乗用車の自動車税（年額・東京都の税率表の抜粋）</h3>
+          <div className="mt-3 overflow-x-auto border border-chalk-line">
+            <table className="spec-table">
+              <thead>
+                <tr>
+                  <th>総排気量</th>
+                  <th>令和元年10月1日以後 初回新規登録</th>
+                  <th>令和元年9月30日以前 初回新規登録</th>
+                </tr>
+              </thead>
+              <tbody>
+                {RATES.map((r) => (
+                  <tr key={r.cc}>
+                    <th>{r.cc}</th>
+                    <td>{r.after}円</td>
+                    <td>{r.before}円</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs leading-relaxed text-steel-500">
+            出典：<a href={SRC_TOKYO_RATE} rel="nofollow noopener" target="_blank" className="underline underline-offset-4">東京都主税局「自動車税種別割」7 税率（年額）</a>（自家用・白ナンバー乗用車。電気自動車は1リットル以下と同額。グリーン化特例の適用を受けない車の抜粋・2026年10月15日確認）。
+          </p>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="section-title mb-5">還付金が届くまでの流れ（東京都の場合）</h2>
+          <ul className="space-y-2 text-sm leading-loose text-steel-700">
+            <li>・還付金が発生すると、納税義務者に自動的に通知が送られます。別途の還付申請は不要です。</li>
+            <li>・通知が届くまでは、抹消登録等が確認されてから1か月程度かかります。</li>
+            <li>・5万円以下はゆうちょ銀行の「振替払出証書」で郵便局等で換金、5万円超は口座振替依頼書を返送して振込で受け取ります。</li>
+            <li>・都税の未納額がある場合は、還付金は未納額に充当されます。</li>
+            <li>・廃車を業者に頼み、還付金を業者が受け取る場合は「還付委任状」を使います（廃車による還付は登録後3日目までに提出）。委任するかどうかは契約時に確認しましょう。</li>
+          </ul>
+          <p className="mt-3 text-xs text-steel-500">
+            出典：<a href={SRC_TOKYO_FAQ} rel="nofollow noopener" target="_blank" className="underline underline-offset-4">東京都主税局「自動車と税金」FAQ Q30〜Q32</a>（2026年10月15日確認）。他の道府県の手続きは各県税事務所にご確認ください。
+          </p>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="section-title mb-5">自動車重量税も戻る場合がある（解体＋車検残1か月以上）</h2>
+          <p className="text-sm leading-loose text-steel-700">
+            国税庁によると、自動車リサイクル法に基づいて使用済自動車が適正に解体された場合、申請により車検残存期間に相当する自動車重量税が還付されます。条件は、(1) 解体を事由とする永久抹消登録申請書または解体届出書を運輸支局等に出すのと同時に還付申請書を提出すること、(2) 車検残存期間が1か月以上あることです。申請書が運輸支局等に提出されてから還付金が支払われるまで、おおむね2か月半程度かかります（
+            <a href={SRC_NTA} rel="nofollow noopener" target="_blank" className="text-vermilion underline underline-offset-4">国税庁タックスアンサーNo.7193</a>・2026年10月15日確認）。
+          </p>
+          <p className="mt-4 text-sm leading-loose text-steel-700">
+            売却（名義変更）や一時抹消では重量税の還付はありません。自賠責保険は税金ではありませんが、抹消登録後に加入先の保険会社で解約すると残り期間に応じた返戻を受けられる場合があります。手続きと金額は加入先の保険会社に確認してください。
+          </p>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="section-title mb-5">売ったのに納税通知が届くときは名義変更を確認</h2>
+          <p className="text-sm leading-loose text-steel-700">
+            東京都主税局は、車を売却した場合は買い取った側が移転登録（名義変更）し自動車税事務所に申告しなければならず、「これらの登録・申告をしませんと、自動車を譲った方（売却した方）に引き続き自動車税が課税されます」と注意しています（FAQ Q10）。3月に売った車の納税通知が5月に届いた場合は、3月31日までに名義変更が完了したかを依頼した業者に確認しましょう。
           </p>
         </section>
 
