@@ -65,9 +65,9 @@ export default function GuideKaitoriVsShitadoriPage() {
           車を手放す方法は、大きく「買取業者に売る」か「次の車の購入先に下取りに出す」かに分かれます。どちらが得かは車と状況によって異なるため金額の断定はできませんが、両者は仕組みが異なるため、違いを把握しておくことで判断の軸が定まりやすくなります。本ページでは、仕組みの違いと使い分けの判断軸を一般論として整理します。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-l-4 border-vermilion bg-chalk-card p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">買取と下取りの違いと使い分けの判断基準</h2>
           <ul className="mt-4 space-y-2 text-sm leading-loose text-steel-700">
             <li>・買取は「車を売る取引」、下取りは「次の車の購入に付随する取引」で、仕組みが根本的に異なります。</li>
             <li>・下取りは値引きと一体で提示されるため、車そのものの評価額が見えにくくなりがちです。</li>

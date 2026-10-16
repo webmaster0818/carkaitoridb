@@ -99,9 +99,9 @@ export default function GuideZeikinPage() {
           車を手放すとき、「納めた自動車税は戻るのか」は多くの方が迷われる点です。売却か廃車か、普通車か軽自動車かによって扱いが変わります。本ページでは、制度の一般的な仕組みをご説明します。なお、当サイトは税務の専門機関ではないため個別の判断は行いません。ご自身のケースの正確な取り扱いは、お住まいの都道府県税事務所（軽自動車は市区町村）にご確認ください。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-l-4 border-vermilion bg-chalk-card p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">売却と廃車で異なる自動車税の還付の扱い</h2>
           <ul className="mt-4 space-y-2 text-sm leading-loose text-steel-700">
             <li>・自動車税（種別割）は、毎年4月1日時点の所有者（使用者）にその年度分が課税される仕組みです。</li>
             <li>・普通車を「廃車」（抹消登録）にすると、残り期間分の月割還付を受けられる制度があります。</li>

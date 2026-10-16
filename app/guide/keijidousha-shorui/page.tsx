@@ -232,9 +232,9 @@ export default function KeijidoushaShoruiPage() {
           軽自動車を売るときの書類は、普通車と同じではありません。実印と印鑑登録証明書が必要になる普通車に対して、軽自動車は認印で足りるのが一般的で、手続きの窓口も運輸支局ではなく軽自動車検査協会です。このページでは、軽自動車の売却に絞って必要書類と普通車との違いを整理し、紛失したときの再発行窓口までを一般知識としてまとめます。制度や様式は変わることがあるため、最新の必要書類は軽自動車検査協会や買取業者にご確認ください。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">軽自動車の売却書類と手続き窓口の要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

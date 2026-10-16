@@ -117,9 +117,9 @@ export default function GuideTroublePage() {
           </p>
         </section>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-l-4 border-vermilion bg-chalk-card p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">契約前の確認事項と減額請求への対応</h2>
           <ul className="mt-4 space-y-2 text-sm leading-loose text-steel-700">
             <li>・契約前に「キャンセル規定」と「引き渡し後の減額の有無」を書面で確認するのが予防の基本です。</li>
             <li>・引き渡し後の減額請求（二重査定）には即答せず、根拠の説明を書面で求めます。</li>

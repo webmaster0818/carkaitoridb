@@ -65,9 +65,9 @@ export default function GuideGenkaPointPage() {
           車の査定では、外装・内装・機関・履歴といった項目が一定の基準で確認されます。確認される箇所を把握しておくことで、売却前の不要な出費を避け、必要な準備に絞ることができます。本ページでは、減額の対象になりやすい箇所の一般知識と、無料でできる準備、そして「隠さず申告する」ことが重要な理由を整理します。査定額は車種と状態によって異なるため、当サイトでは金額の断定を控えます。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-l-4 border-vermilion bg-chalk-card p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">査定で確認される箇所と事前準備の要点</h2>
           <ul className="mt-4 space-y-2 text-sm leading-loose text-steel-700">
             <li>・確認されやすいのは、外装の傷・内装の臭いと汚れ・改造の有無・修復歴・整備記録の有無です。</li>
             <li>・不利な点を隠すことは避けてください。引き渡し後の減額トラブル（二重査定）の原因になります。</li>

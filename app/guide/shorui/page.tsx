@@ -133,9 +133,9 @@ export default function ShoruiGuidePage() {
           車の売却では、書類の準備で手続きが滞ることが少なくありません。査定額の交渉がまとまっても、書類が揃わなければ名義変更が進まず、入金も遅れます。本ページでは、普通車と軽自動車それぞれで必要になりやすい書類の一覧、紛失した場合の再発行窓口、書類に関する注意点を一般知識として整理します。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">車売却の必要書類と再発行窓口の要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">
