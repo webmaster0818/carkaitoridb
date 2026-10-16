@@ -14,7 +14,7 @@ import { CHECKED_RANGE_LABEL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "車買取27社の比較表【査定料・入金・キャンセル規定を公式確認】",
   description:
-    "大手買取店・一括査定・オークション型・廃車買取・外車/旧車/トラック専門の車買取27社を統一フォーマットで比較。査定料・手数料・引取・書類・受付時間・入金・キャンセル規定・運営会社と古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
+    "大手買取店・一括査定・オークション型・廃車買取・外車/旧車/トラック専門の車買取27社を統一フォーマットで比較しています。査定料・手数料・引取・書類・受付時間・入金・キャンセル規定・運営会社と古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
   alternates: { canonical: "/compare/" },
 };
 
@@ -33,9 +33,9 @@ export default function ComparePage() {
           車買取27社の統一比較表
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          掲載27社のサービス条件を、各社公式サイトの一次確認に基づいて同じ物差しで並べています。
+          掲載27社のサービス条件を、各社公式サイトの一次確認にもとづき、統一基準で掲載しています。
           <strong className="text-steel-800">確認日: {CHECKED_RANGE_LABEL}（各社の確認日は業者ページに記載）</strong>
-          。公式サイトで確認できなかった項目は「公式では確認できず」とそのまま表示しています。最新の条件・詳細な規定は必ず各社公式サイトでご確認ください。
+          。公式サイトで確認できなかった項目は「公式では確認できず」と表示しています。ご利用前に、各社公式サイトにて最新の条件・詳細な規定をご確認ください。
         </p>
 
         <div className="mt-10 overflow-x-auto border border-chalk-line">
@@ -93,14 +93,13 @@ export default function ComparePage() {
           </table>
         </div>
         <p className="mt-3 text-xs text-steel-500">
-          ※ 横にスクロールできます。表中の「公式では確認できず」は、各社の確認日
-          時点の当サイト調査で公式サイト上に記載を発見できなかったことを意味します（サービスが存在しないという意味ではありません）。
+          ※ 表は横にスクロールできます。表中の「公式では確認できず」は、各社の確認日時点の当サイトの調査で、公式サイト上に該当する記載を確認できなかったことを示します（サービスが存在しないという意味ではありません）。
         </p>
 
         <section className="mt-14 grid gap-4 md:grid-cols-2">
           <div className="border border-chalk-line bg-chalk-card p-6">
             <h2 className="font-display text-lg text-steel-900">
-              カテゴリから絞り込む
+              カテゴリ別の比較
             </h2>
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link className="text-vermilion underline underline-offset-4" href="/gaisha/">外車・輸入車の買取</Link></li>
@@ -111,9 +110,9 @@ export default function ComparePage() {
             </ul>
           </div>
           <div className="flex flex-col justify-center border border-chalk-line bg-steel-800 p-6 text-chalk">
-            <h2 className="font-display text-lg">迷ったら4問診断</h2>
+            <h2 className="font-display text-lg">4問の売り方診断</h2>
             <p className="mt-3 text-[13px] leading-relaxed text-steel-200">
-              車の種類・状態・重視することに答えると、ルールベースで合うカテゴリと業者を提示します。
+              車の種類・状態・重視すること・売却時期の4問に答えると、あらかじめ定めた判定ルールにもとづき、適したカテゴリと業者を提示します。
             </p>
             <Link href="/shindan/" className="btn-primary mt-5 self-start text-sm">
               売り方診断へ

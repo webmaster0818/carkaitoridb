@@ -109,7 +109,7 @@ export default function MakerGuide({
 
         {/* 結論先出し */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">先に結論</h2>
+          <h2 className="font-display text-lg text-steel-900">要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">
@@ -157,7 +157,7 @@ export default function MakerGuide({
             ))}
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ 買取価格・相場・査定額は、年式・走行距離・状態・時期により異なります。当サイトでは金額の目安は扱いません。
+            ※ 買取価格・相場・査定額は、年式・走行距離・状態・時期により異なります。当サイトでは金額の目安を掲載しておりません。
           </p>
         </section>
 

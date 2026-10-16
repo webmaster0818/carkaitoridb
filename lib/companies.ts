@@ -46,7 +46,7 @@ export const companies = raw as unknown as Company[];
 
 export const NA = "公式では確認できず";
 
-/** null/未確認項目は正直に「公式では確認できず」を返す */
+/** null/未確認項目は「公式では確認できず」を返す */
 export function fmt(v: string | null | undefined): string {
   return v && v.trim() !== "" ? v : NA;
 }
@@ -114,7 +114,7 @@ export const categories: Category[] = [
     path: "/gaisha/",
     name: "外車・輸入車の買取",
     short: "外車・輸入車",
-    lead: "輸入車は国産車と査定の見方が異なります。輸入車を専門に扱う買取サービスの条件を一次確認で整理しました。",
+    lead: "輸入車は国産車と査定の見方が異なります。輸入車を専門に扱う買取サービスの条件を、公式サイトでの一次確認にもとづき整理しています。",
     companySlugs: ["gaisha-master", "gaisha-oh"],
   },
   {
@@ -122,7 +122,7 @@ export const categories: Category[] = [
     path: "/truck/",
     name: "トラック・重機の買取",
     short: "トラック・重機",
-    lead: "トラック・ダンプ・建設機械は商用車専門業者の領域です。専門2社のサービス条件を一次確認で整理しました。",
+    lead: "トラック・ダンプ・建設機械は、主に商用車を専門とする業者が取り扱います。専門2社のサービス条件を、公式サイトでの一次確認にもとづき整理しています。",
     companySlugs: ["truck-oukoku", "bee-truck"],
   },
   {
@@ -130,7 +130,7 @@ export const categories: Category[] = [
     path: "/haisha/",
     name: "廃車・事故車・不動車の買取",
     short: "廃車・事故車",
-    lead: "動かない車・事故車・車検切れの車にも売り方があります。廃車買取サービスの条件と手続きの一般知識をまとめました。",
+    lead: "動かない車・事故車・車検切れの車にも売却方法があります。廃車買取サービスの条件と、手続きに関する一般的な知識をまとめています。",
     companySlugs: ["haishar", "carnext", "haisyahonpo", "tau"],
   },
   {
@@ -138,7 +138,7 @@ export const categories: Category[] = [
     path: "/kyusha/",
     name: "旧車・クラシックカーの買取",
     short: "旧車・クラシック",
-    lead: "10年以上前の車・絶版車は、旧車を専門に扱う業者に相談する選択肢があります。専門サービスの条件を一次確認で整理しました。",
+    lead: "10年以上前の車・絶版車は、旧車を専門に扱う業者に相談する方法があります。専門サービスの条件を、公式サイトでの一次確認にもとづき整理しています。",
     companySlugs: ["qsha-oh"],
   },
   {
@@ -146,7 +146,7 @@ export const categories: Category[] = [
     path: "/auction/",
     name: "オークション型・電話なしで売る",
     short: "オークション型",
-    lead: "一括査定の営業電話を避けたい人向けに、オークション型・チャット完結型のサービス4社の公式記載を一次確認で整理しました。",
+    lead: "一括査定の営業電話を避けたい方向けに、オークション型・チャット完結型のサービス4社の公式記載を一次確認し、整理しています。",
     companySlugs: ["sellca", "strema", "rakuten-car-kaitori", "ucarpac"],
   },
 ];
@@ -164,7 +164,7 @@ export function categoriesOf(company: Company): Category[] {
 /** 業者詳細ページ用FAQ（データからのみ生成・創作なし） */
 export function companyFaq(c: Company): { q: string; a: string }[] {
   const naAnswer = (item: string) =>
-    `${item}については、公式サイトでは確認できませんでした（${c.confirmed_date}時点の当サイト調査）。契約前に${c.name}へ直接確認することをおすすめします。`;
+    `${item}については、公式サイトでは確認できませんでした（${c.confirmed_date}時点の当サイト調査）。契約前に${c.name}へ直接ご確認ください。`;
   return [
     ...(c.extra_faq ?? []),
     {
@@ -183,7 +183,7 @@ export function companyFaq(c: Company): { q: string; a: string }[] {
       q: `${c.name}は契約後にキャンセルできますか？`,
       a: isNA(c.cancel)
         ? naAnswer("契約後のキャンセル規定")
-        : `公式サイトの記載では「${c.cancel}」とされています（${c.confirmed_date}確認）。実際の契約条件は必ず契約書面で確認してください。`,
+        : `公式サイトの記載では「${c.cancel}」とされています（${c.confirmed_date}確認）。実際の契約条件は、必ず契約書面にてご確認ください。`,
     },
   ];
 }

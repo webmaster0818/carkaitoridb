@@ -26,12 +26,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCompany(slug);
   return {
-    title: c.seo_title ?? `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`,
+    title: c.seo_title ?? `${c.name}の買取条件｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`,
     description: c.seo_description ?? (() => {
-      const base = `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`;
-      const full = `${base}確認できなかった項目は「公式では確認できず」と正直に記載しています。`;
+      const base = `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認しています（${jaDate(c.confirmed_date)}確認）。`;
+      const full = `${base}確認できなかった項目は「公式では確認できず」と記載しています。`;
       if (full.length <= 160) return full;
-      const mid = `${base}未確認の項目は「公式では確認できず」と記載。`;
+      const mid = `${base}未確認の項目は「公式では確認できず」と記載しています。`;
       return mid.length <= 160 ? mid : base;
     })(),
     alternates: { canonical: `/gyosha/${c.slug}/` },
@@ -75,7 +75,7 @@ export default async function GyoshaPage({
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">COMPANY FACT SHEET</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          {c.h1 ?? `${c.name}の買取サービスまとめ｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`}
+          {c.h1 ?? `${c.name}の買取条件｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`}
         </h1>
         {c.updated_date && (
           <p className="mt-3 text-xs text-steel-500">
@@ -88,13 +88,13 @@ export default async function GyoshaPage({
           </div>
         )}
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          {c.name}のサービス条件を、公式サイトの記載に基づいて一次確認しました（確認日: {jaDate(c.confirmed_date)}）。
+          {c.name}のサービス条件を、公式サイトの記載にもとづき一次確認しています（確認日: {jaDate(c.confirmed_date)}）。
           サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。
         </p>
 
         {/* 実務即答テーブル */}
         <section className="mt-10">
-          <h2 className="section-title mb-5">実務のポイント即答表</h2>
+          <h2 className="section-title mb-5">主要な取引条件</h2>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
               <tbody>
@@ -117,18 +117,18 @@ export default async function GyoshaPage({
               {c.name}の公式サイトを見る
             </a>
             <Link href="/compare/" className="btn-ghost">
-              27社比較表で他社と並べる
+              27社比較表で他社と比較する
             </Link>
           </div>
           {proc && (
             <div className="mt-6 border border-chalk-line bg-chalk-card px-5 py-4">
-              <p className="text-sm font-bold text-steel-900">{c.name}の手続きを詳しく見る</p>
+              <p className="text-sm font-bold text-steel-900">{c.name}の手続きの詳細</p>
               <div className="mt-3 flex flex-col gap-3 sm:flex-row">
                 <Link href={`/gyosha/${c.slug}/nagare/`} className="btn-ghost">
                   買取の流れ（{proc.flow.length}ステップ）
                 </Link>
                 <Link href={`/gyosha/${c.slug}/shorui/`} className="btn-ghost">
-                  必要書類（普通車{proc.docsNormal.length}点・軽{proc.docsKei.length}点）
+                  必要書類（普通車{proc.docsNormal.length}点・軽自動車{proc.docsKei.length}点）
                 </Link>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default async function GyoshaPage({
             ))}
           </ul>
           <p className="mt-3 text-xs text-steel-500">
-            ※ いずれも{c.name}公式サイトの記載に基づきます（{jaDate(c.confirmed_date)}確認）。当サイト独自の評価ではありません。
+            ※ いずれも{c.name}公式サイトの記載にもとづきます（{jaDate(c.confirmed_date)}確認）。当サイト独自の評価ではありません。
           </p>
         </section>
 
@@ -191,7 +191,7 @@ export default async function GyoshaPage({
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="section-title mb-5">{c.name}のよくある疑問</h2>
+          <h2 className="section-title mb-5">{c.name}に関するよくある質問</h2>
           <div className="space-y-4">
             {faqs.map((f) => (
               <div key={f.q} className="border border-chalk-line bg-chalk-card p-5">
@@ -207,12 +207,12 @@ export default async function GyoshaPage({
 
         {/* 情報の検証欄 */}
         <section className="mt-14 border border-steel-200 bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">この情報の検証について</h2>
+          <h2 className="font-display text-lg text-steel-900">掲載情報の確認方法について</h2>
           <ul className="mt-4 space-y-2 text-[13px] leading-loose text-steel-700">
             <li>・本ページの条件は、{c.name}公式サイト（{c.official_url}）および運営会社ページを{jaDate(c.confirmed_date)}に確認して作成しています。</li>
             <li>・公式サイトで確認できなかった項目は「公式では確認できず」と表示し、推測で補完していません。</li>
             <li>・口コミ・体験談の創作、架空の買取金額・実績の掲載は行いません。</li>
-            <li>・条件は変更される場合があります。契約前に必ず公式サイト・契約書面で最新の内容をご確認ください。</li>
+            <li>・条件は変更される場合があります。ご契約前に、公式サイトおよび契約書面にて最新の内容をご確認ください。</li>
           </ul>
           <p className="mt-4 text-xs text-steel-500">
             詳細は<Link href="/content-policy/" className="text-vermilion underline underline-offset-4">コンテンツ制作ポリシー</Link>をご覧ください。
@@ -221,12 +221,12 @@ export default async function GyoshaPage({
 
         {/* 導線 */}
         <section className="mt-14">
-          <h2 className="section-title mb-5">あわせて読む</h2>
+          <h2 className="section-title mb-5">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">車買取27社の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">同じ物差しで27社の条件を並べる</span>
+                <span className="mt-1 block text-xs text-steel-500">27社の条件を統一基準で比較</span>
               </Link>
             </li>
             {cats.map((cat) => (
@@ -240,7 +240,7 @@ export default async function GyoshaPage({
             <li>
               <Link href="/shindan/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">売り方診断（4問）</span>
-                <span className="mt-1 block text-xs text-steel-500">自分の状況に合う売り方をルールベースで判定</span>
+                <span className="mt-1 block text-xs text-steel-500">状況に適した売り方を判定ルールにもとづき提示</span>
               </Link>
             </li>
           </ul>

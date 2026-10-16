@@ -1,6 +1,6 @@
 export const SITE_URL = "https://sell-car.net"; // 本番ドメイン（2026-09-05確定）
 export const SITE_NAME = "車買取ナビ";
-export const SITE_TAGLINE = "売る前の5分で読む、中立の車買取ナビ";
+export const SITE_TAGLINE = "公式情報にもとづく中立の車買取比較";
 export const CHECKED_DATE = "2026-08-07";
 export const CHECKED_LABEL = "2026年8月7日";
 /** 掲載社全体の確認期間（各社の確認日は data/companies.json の confirmed_date） */

@@ -39,7 +39,7 @@ export default function SiteFooter() {
         </div>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
           <FooterCol
-            title="カテゴリで探す"
+            title="カテゴリ別の買取情報"
             links={[
               ...categories.map((c) => ({ href: c.path, label: c.name })),
               { href: "/compare/", label: "掲載27社の比較表" },
@@ -47,23 +47,23 @@ export default function SiteFooter() {
             ]}
           />
           <FooterCol
-            title="業者情報（一次確認）"
+            title="業者別の公式確認情報"
             links={companies.map((c) => ({
               href: `/gyosha/${c.slug}/`,
               label: c.name,
             }))}
           />
           <FooterCol
-            title="状況別・ガイド"
+            title="状況別の売却ガイド"
             links={[
-              { href: "/situation/souzoku/", label: "相続した車を売る" },
-              { href: "/situation/loan/", label: "ローンが残っている車を売る" },
-              { href: "/situation/shakenkire/", label: "車検切れの車を売る" },
+              { href: "/situation/souzoku/", label: "相続した車の売却" },
+              { href: "/situation/loan/", label: "ローンが残っている車の売却" },
+              { href: "/situation/shakenkire/", label: "車検切れの車の売却" },
               { href: "/guide/shorui/", label: "売却の必要書類ガイド" },
             ]}
           />
           <FooterCol
-            title="サイトについて"
+            title="当サイトについて"
             links={[
               { href: "/about/", label: "運営者情報" },
               { href: "/content-policy/", label: "コンテンツ制作ポリシー" },
@@ -79,13 +79,13 @@ export default function SiteFooter() {
               {OPERATOR.address}
             </p>
             <p className="mt-4 text-xs leading-relaxed text-steel-400">
-              掲載する業者情報はすべて各社公式サイトを一次確認し、確認日を明記しています。口コミ・体験談の創作は行いません。
+              掲載する業者情報は、各社の公式サイトで一次確認した内容に限定し、確認日を記載しています。口コミ・体験談の創作は行いません。
             </p>
           </div>
         </div>
         <div className="mt-12 border-t border-steel-700 pt-6 text-xs text-steel-400">
           <p>
-            本サイトはプロモーション（PR）を含みます。掲載内容は確認日時点の各社公式サイトの記載に基づくもので、最新の条件は各社公式サイトでご確認ください。
+            本サイトはプロモーション（PR）を含みます。掲載内容は、確認日時点の各社公式サイトの記載にもとづいています。ご利用前に、各社公式サイトにて最新情報をご確認ください。
           </p>
           <p className="mt-2">
             &copy; {new Date().getFullYear()} {OPERATOR.name}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
-import { companies, ctaFor, fmt, getCompany } from "@/lib/companies";
+import { companies, ctaFor, fmt, getCompany, isNA } from "@/lib/companies";
 import { PROCEDURE_CHECKED_ON, getProcedure, procedureSlugs } from "@/lib/procedures";
 
 export function generateStaticParams() {
@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (!p) return {};
   return {
     title: `${c.name}の車買取の流れ｜申し込みから入金までの${p.flow.length}ステップ【公式確認】`,
-    description: `${c.name}で車を売るときの流れを、公式サイトの記載どおりに${p.flow.length}ステップで整理しました（${PROCEDURE_CHECKED_ON}確認）。入金までにかかる期間と、各段階で決めることをまとめています。`,
+    description: `${c.name}で車を売却する際の流れを、公式サイトの記載にもとづき${p.flow.length}ステップに整理しています（${PROCEDURE_CHECKED_ON}確認）。入金までの期間と、各段階で決める事項もご説明します。`,
     alternates: { canonical: `/gyosha/${c.slug}/nagare/` },
   };
 }
@@ -46,11 +46,15 @@ export default async function NagarePage({
     },
     {
       q: `${c.name}は入金までどれくらいかかりますか？`,
-      a: `公式の記載は「${fmt(c.nyukin)}」です。書類の不備があると遅れることがあるため、査定を受ける前に書類を揃えておくと確実です。`,
+      a: isNA(c.nyukin)
+        ? `入金時期は、${PROCEDURE_CHECKED_ON}時点で公式サイト上に記載を確認できませんでした。書類に不備があると入金が遅れる場合があるため、査定を受ける前に書類を揃えておくことをおすすめします。`
+        : `公式サイトの記載にもとづく入金時期は「${fmt(c.nyukin)}」です。書類に不備があると入金が遅れる場合があるため、査定を受ける前に書類を揃えておくことをおすすめします。`,
     },
     {
       q: `査定額に納得できなかった場合はどうなりますか？`,
-      a: `キャンセルの扱いは「${fmt(c.cancel)}」と公式に記載されています。契約前に規定を確認してください。`,
+      a: isNA(c.cancel)
+        ? `キャンセルの扱いは、${PROCEDURE_CHECKED_ON}時点で公式サイト上に記載を確認できませんでした。ご契約前に、公式サイトにて最新の規定をご確認ください。`
+        : `公式サイトの記載にもとづくキャンセルの扱いは「${fmt(c.cancel)}」です。ご契約前に、公式サイトにて最新の規定をご確認ください。`,
     },
   ];
 
@@ -70,8 +74,8 @@ export default async function NagarePage({
           {c.name}の車買取の流れ｜申し込みから入金までの{p.flow.length}ステップ
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          {c.name}で車を売るときの流れを、公式サイトの記載どおりに整理しました（確認日: {PROCEDURE_CHECKED_ON}）。
-          各ステップで何を決めるのか、どこで止まりやすいのかを添えています。記載のない内容は推測で補っていません。
+          {c.name}で車を売却する際の流れを、公式サイトの記載にもとづき整理しています（確認日: {PROCEDURE_CHECKED_ON}）。
+          各ステップで決める事項と、手続きが滞りやすい点もあわせて記載しています。公式サイトに記載のない内容は、推測で補っていません。
         </p>
 
         <section className="mt-10">
@@ -96,7 +100,7 @@ export default async function NagarePage({
         </section>
 
         <section className="mt-14">
-          <h2 className="section-title mb-5">流れの中で先に決めておくこと</h2>
+          <h2 className="section-title mb-5">事前に確認しておきたい条件</h2>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
               <tbody>
@@ -129,11 +133,11 @@ export default async function NagarePage({
         </section>
 
         <section className="mt-14">
-          <h2 className="section-title mb-5">書類が揃っていないと流れが止まります</h2>
+          <h2 className="section-title mb-5">必要書類の事前準備について</h2>
           <p className="max-w-3xl text-sm leading-loose text-steel-700">
-            {c.name}の公式サイトでも、書類の準備は査定より前の段階に置かれています。
-            当日に書類が足りないと、署名・押印がその場でできず、入金も後ろにずれます。
-            必要書類は普通自動車と軽自動車で異なるため、先に確認しておいてください。
+            {c.name}の公式サイトでも、書類の準備は査定より前の段階に位置付けられています。
+            当日に書類が不足していると、その場で署名・押印ができず、入金も遅れます。
+            必要書類は普通自動車と軽自動車で異なるため、事前にご確認ください。
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href={`/gyosha/${c.slug}/shorui/`} className="btn-primary">
@@ -163,7 +167,7 @@ export default async function NagarePage({
               {c.name}の公式サイトを見る
             </a>
             <Link href="/compare/" className="btn-ghost">
-              他社と条件を並べて比べる
+              他社と条件を比較する
             </Link>
           </div>
         </section>

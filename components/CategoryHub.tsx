@@ -52,7 +52,7 @@ export default function CategoryHub({
 
         {/* 判断ポイント（一般知識） */}
         <section className="mt-12">
-          <h2 className="section-title mb-6">売る前に押さえる判断ポイント</h2>
+          <h2 className="section-title mb-6">売却前に確認したい判断ポイント</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {points.map((p, i) => (
               <div key={p.t} className="border border-chalk-line bg-chalk-card p-5">
@@ -67,15 +67,15 @@ export default function CategoryHub({
             ))}
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ ここに挙げたのは車の売却に関する一般的な知識です。個別の買取条件・金額はここでは扱いません。
+            ※ 上記は車の売却に関する一般的な知識です。個別の買取条件・金額は本項では扱っておりません。
           </p>
         </section>
 
         {/* 業者比較カード */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">このカテゴリで掲載中の業者</h2>
+          <h2 className="section-title mb-2">本カテゴリの掲載業者</h2>
           <p className="mb-6 text-sm leading-loose text-steel-600">
-            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_RANGE_LABEL}。各社の確認日は業者ページに記載）。「公式では確認できず」の項目は、公式サイト上に記載を発見できなかったことを意味します。
+            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_RANGE_LABEL}。各社の確認日は業者ページに記載）。「公式では確認できず」と表示している項目は、公式サイト上で該当する記載を確認できなかったものです。
           </p>
           <div className="grid gap-5 lg:grid-cols-2">
             {hubCompanies.map((c) => (
@@ -120,19 +120,19 @@ export default function CategoryHub({
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">車買取27社の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">全カテゴリの掲載業者を同じ物差しで比較</span>
+                <span className="mt-1 block text-xs text-steel-500">全カテゴリの掲載業者を統一基準で比較</span>
               </Link>
             </li>
             <li>
               <Link href="/shindan/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">売り方診断（4問）</span>
-                <span className="mt-1 block text-xs text-steel-500">状況に合うカテゴリをルールベースで判定</span>
+                <span className="mt-1 block text-xs text-steel-500">状況に適したカテゴリを判定ルールにもとづき提示</span>
               </Link>
             </li>
             {hubCompanies.map((c) => (
               <li key={c.slug}>
                 <Link href={`/gyosha/${c.slug}/`} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                  <span className="font-display text-steel-900">{c.name}の一次確認まとめ</span>
+                  <span className="font-display text-steel-900">{c.name}の一次確認情報</span>
                   <span className="mt-1 block text-xs text-steel-500">手数料・入金・キャンセル規定の詳細</span>
                 </Link>
               </li>
@@ -141,7 +141,7 @@ export default function CategoryHub({
               <li key={c.slug}>
                 <Link href={c.path} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                   <span className="font-display text-steel-900">{c.name}</span>
-                  <span className="mt-1 block text-xs text-steel-500">別カテゴリの判断ポイントを見る</span>
+                  <span className="mt-1 block text-xs text-steel-500">他カテゴリの判断ポイント</span>
                 </Link>
               </li>
             ))}

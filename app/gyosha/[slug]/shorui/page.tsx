@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
-import { companies, ctaFor, fmt, getCompany } from "@/lib/companies";
+import { companies, ctaFor, fmt, getCompany, isNA } from "@/lib/companies";
 import { PROCEDURE_CHECKED_ON, getProcedure, procedureSlugs } from "@/lib/procedures";
 
 export function generateStaticParams() {
@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (!p) return {};
   return {
     title: `${c.name}の車買取に必要な書類｜普通車${p.docsNormal.length}点・軽自動車${p.docsKei.length}点【公式確認】`,
-    description: `${c.name}で車を売るときの必要書類を、公式サイトの記載どおりに普通自動車と軽自動車に分けて整理しました（${PROCEDURE_CHECKED_ON}確認）。紛失したときの再発行窓口もあわせて案内します。`,
+    description: `${c.name}で車を売却する際の必要書類を、公式サイトの記載にもとづき普通自動車と軽自動車に分けて整理しています（${PROCEDURE_CHECKED_ON}確認）。紛失時の再発行窓口もあわせてご案内します。`,
     alternates: { canonical: `/gyosha/${c.slug}/shorui/` },
   };
 }
@@ -43,18 +43,18 @@ export default async function ShoruiPage({
 
   const faqs = [
     {
-      q: `${c.name}で車を売るとき、必要な書類は何点ですか？`,
+      q: `${c.name}で車を売却する際、必要な書類は何点ですか？`,
       a: `公式サイトの記載では、普通自動車が${p.docsNormal.length}点、軽自動車が${p.docsKei.length}点です（${PROCEDURE_CHECKED_ON}確認）。売却の状況によって追加で求められる場合があります。`,
     },
     {
       q: `軽自動車でも実印と印鑑登録証明書は必要ですか？`,
       a: p.docsKei.some((d) => d.includes("実印"))
         ? `${c.name}の公式一覧には軽自動車にも実印の記載があります。`
-        : `${c.name}の公式一覧では、軽自動車に実印の記載はありません${p.docsKei.some((d) => d.includes("認印")) ? "（認印の記載があります）" : ""}。${p.docsKeiNote ?? ""}詳細は申し込み時にご確認ください。`,
+        : `${c.name}の公式一覧では、軽自動車に実印の記載はありません${p.docsKei.some((d) => d.includes("認印")) ? "（認印の記載があります）" : ""}。${p.docsKeiNote && !p.docsKeiNote.includes("実印の記載") ? p.docsKeiNote : ""}詳細はお申し込み時にご確認ください。`,
     },
     {
       q: `書類が揃っていないと売れませんか？`,
-      a: `書類が不足していると、その場で署名・押印ができず手続きが止まります。入金のタイミング（公式記載: ${fmt(c.nyukin)}）も後ろにずれるため、査定の前に揃えておくのが確実です。`,
+      a: `書類が不足していると、その場で署名・押印ができず、手続きが進みません。${isNA(c.nyukin) ? "" : `入金時期（公式サイトの記載: ${fmt(c.nyukin)}）も遅れるため、`}査定の前に書類を揃えておくことをおすすめします。`,
     },
   ];
 
@@ -74,8 +74,8 @@ export default async function ShoruiPage({
           {c.name}の車買取に必要な書類｜普通車{p.docsNormal.length}点・軽自動車{p.docsKei.length}点
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          {c.name}の公式サイトに記載されている必要書類を、普通自動車と軽自動車に分けてそのまま整理しました（確認日: {PROCEDURE_CHECKED_ON}）。
-          公式に記載のない書類は足していません。
+          {c.name}の公式サイトに記載されている必要書類を、普通自動車と軽自動車に分けて整理しています（確認日: {PROCEDURE_CHECKED_ON}）。
+          公式サイトに記載のない書類は追加していません。
         </p>
 
         <section className="mt-10 grid gap-8 md:grid-cols-2">
@@ -108,14 +108,14 @@ export default async function ShoruiPage({
           <a href={p.docsSourceUrl} rel="nofollow noopener noreferrer" target="_blank" className="underline">
             {c.name}公式サイト
           </a>
-          （{PROCEDURE_CHECKED_ON}確認）。必要書類は売却の状況により変わることがあるため、最新の案内は公式サイトでご確認ください。
+          （{PROCEDURE_CHECKED_ON}確認）。必要書類は売却の状況により異なる場合があるため、ご利用前に、公式サイトにて最新情報をご確認ください。
         </p>
 
         {onlyNormal.length > 0 && (
           <section className="mt-14">
-            <h2 className="section-title mb-5">普通自動車だけに必要な書類</h2>
+            <h2 className="section-title mb-5">普通自動車のみに必要な書類</h2>
             <p className="max-w-3xl text-sm leading-loose text-steel-700">
-              {c.name}の公式一覧を並べると、普通自動車にだけ挙がっているのは
+              {c.name}の公式一覧のうち、普通自動車のみに記載されている書類は
               <strong>{onlyNormal.join("・")}</strong>
               です。軽自動車は名義変更の手続きが異なるため、求められる書類が少なくなっています。
             </p>
@@ -123,14 +123,14 @@ export default async function ShoruiPage({
         )}
 
         <section className="mt-14">
-          <h2 className="section-title mb-5">紛失したときの再発行窓口</h2>
+          <h2 className="section-title mb-5">紛失時の再発行窓口</h2>
           <p className="max-w-3xl text-sm leading-loose text-steel-700">
-            書類を紛失している場合は、再発行に日数がかかります。窓口は書類ごとに異なり、普通自動車と軽自動車でも違います。
-            当サイトの必要書類ガイドに、再発行の窓口をまとめています。
+            書類を紛失している場合は、再発行に日数を要します。窓口は書類ごとに異なり、普通自動車と軽自動車でも異なります。
+            再発行の窓口は、当サイトの必要書類ガイドにまとめています。
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href="/guide/shorui/" className="btn-primary">
-              必要書類と再発行窓口のガイドを見る
+              必要書類と再発行窓口のガイド
             </Link>
             <Link href={`/gyosha/${c.slug}/nagare/`} className="btn-ghost">
               {c.name}の買取の流れを見る

@@ -51,12 +51,12 @@ export default function AboutPage() {
 
         <h2 className="section-title mt-12">サイトの目的</h2>
         <p className="mt-4 text-sm leading-loose text-steel-700">
-          {SITE_NAME}は、「売る前の5分で読む、中立の車買取ナビ」をコンセプトに、車買取サービスの条件（査定料・引取・書類・入金・キャンセル規定・運営会社情報）を各社公式サイトで一次確認し、確認日つきで整理して提供する情報サイトです。特定の業者への申し込みを強制するものではなく、売却の判断材料を提供することを目的としています。
+          {SITE_NAME}は、「公式情報にもとづく中立の車買取比較」をコンセプトに、車買取サービスの条件（査定料・引取・書類・入金・キャンセル規定・運営会社情報）を各社公式サイトで一次確認し、確認日を明記して整理・提供する情報サイトです。特定の業者への申し込みを強制するものではなく、売却の判断材料を提供することを目的としています。
         </p>
 
         <h2 className="section-title mt-12">編集方針</h2>
         <p className="mt-4 text-sm leading-loose text-steel-700">
-          掲載情報の確認方法・広告掲載の考え方・やらないこと（口コミの創作・架空の実績掲載など）は、
+          掲載情報の確認方法・広告掲載の考え方・行わないこと（口コミの創作・架空の実績掲載など）は、
           <Link href="/content-policy/" className="text-vermilion underline underline-offset-4">
             コンテンツ制作ポリシー
           </Link>

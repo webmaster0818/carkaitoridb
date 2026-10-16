@@ -3,11 +3,11 @@ import { SITE_NAME } from "@/lib/site";
 
 const nav = [
   { href: "/compare/", label: "27社比較表" },
-  { href: "/gaisha/", label: "外車" },
-  { href: "/truck/", label: "トラック" },
+  { href: "/gaisha/", label: "外車・輸入車" },
+  { href: "/truck/", label: "トラック・重機" },
   { href: "/haisha/", label: "廃車・事故車" },
   { href: "/kyusha/", label: "旧車" },
-  { href: "/auction/", label: "電話なし" },
+  { href: "/auction/", label: "オークション型" },
   { href: "/shindan/", label: "売り方診断" },
 ];
 

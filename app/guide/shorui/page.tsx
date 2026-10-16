@@ -4,9 +4,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL, OPERATOR, CHECKED_LABEL } from "@/lib/site";
 
-const TITLE = "車売却の必要書類 完全ガイド｜普通車と軽自動車の違い・紛失時の再発行窓口";
+const TITLE = "車売却の必要書類一覧｜普通車と軽自動車の違い・紛失時の再発行窓口";
 const DESC =
-  "車の売却に必要な書類を一覧で整理。普通車は実印と印鑑登録証明書が必要、軽自動車は認印で足りるのが一般的という違いから、車検証・自賠責保険証明書・リサイクル券・納税証明書の役割、紛失時の再発行窓口（運輸支局・都道府県税事務所など）までを解説します。";
+  "車の売却に必要な書類を一覧で整理しています。普通車は実印と印鑑登録証明書が必要、軽自動車は認印で足りるのが一般的という違いから、車検証・自賠責保険証明書・リサイクル券・納税証明書の役割、紛失時の再発行窓口（運輸支局・都道府県税事務所など）までを解説します。";
 const PATH = "/guide/shorui/";
 
 export const metadata: Metadata = {
@@ -31,18 +31,18 @@ export default function ShoruiGuidePage() {
   const conclusions = [
     "必要書類は普通車と軽自動車で異なります。普通車は実印と印鑑登録証明書が必要、軽自動車は認印で足りるのが一般的です。",
     "共通して必要になりやすいのは、車検証（自動車検査証）・自賠責保険証明書・リサイクル券・納税に関する書類です。",
-    "書類を紛失していても売却は諦めなくて大丈夫です。車検証は運輸支局（軽自動車は軽自動車検査協会）、納税証明書は都道府県税事務所（軽自動車は市区町村）など、それぞれ再発行の窓口があります。",
-    "名義変更などの書類手続きを無料で代行すると公式サイトに記載する業者もあります。書類に不安がある場合は、代行の範囲と費用を比較の軸に加えましょう。",
+    "書類を紛失している場合でも、再発行により売却は可能です。車検証は運輸支局（軽自動車は軽自動車検査協会）、納税証明書は都道府県税事務所（軽自動車は市区町村）など、それぞれ再発行の窓口があります。",
+    "名義変更などの書類手続きを無料で代行すると公式サイトに記載する業者もあります。書類に不安がある場合は、代行の範囲と費用を比較項目に加えることをおすすめします。",
   ];
 
   const futsuRows = [
-    { label: "車検証（自動車検査証）", value: "車の身分証にあたる基本書類。記載の所有者・住所が現在の状況と一致しているかを最初に確認します。" },
+    { label: "車検証（自動車検査証）", value: "車の身分証明にあたる基本書類。記載の所有者・住所が現在の状況と一致しているかを最初に確認します。" },
     { label: "自賠責保険証明書", value: "自賠責保険への加入を証明する書類。車検証と一緒に保管されていることが多い書類です。" },
     { label: "リサイクル券（預託証明書）", value: "自動車リサイクル料金を預託済みであることを示す書類。購入時に受け取っているのが一般的です。" },
-    { label: "自動車税（種別割）の納税に関する書類", value: "納税状況の確認に使われます。納付方法の電子化により扱いが変わってきているため、必要な形式は売却先に確認しましょう。" },
+    { label: "自動車税（種別割）の納税に関する書類", value: "納税状況の確認に使われます。納付方法の電子化により扱いが変わってきているため、必要な形式は売却先にご確認ください。" },
     { label: "実印", value: "普通車の名義変更（移転登録）は実印での押印が必要になるのが一般的です。市区町村に印鑑登録した印鑑を用意します。" },
     { label: "印鑑登録証明書", value: "実印が本物であることを証明する書類。市区町村の窓口などで発行され、発行から一定期間内のものを求められるのが一般的です。" },
-    { label: "譲渡証明書・委任状", value: "名義変更を業者に任せる場合に使う書類。通常は業者側が用紙を用意し、署名・押印箇所を案内してくれます。" },
+    { label: "譲渡証明書・委任状", value: "名義変更を業者に任せる場合に使う書類。通常は業者側が用紙を用意し、署名・押印箇所を案内します。" },
   ];
 
   const keiRows = [
@@ -50,17 +50,17 @@ export default function ShoruiGuidePage() {
     { label: "自賠責保険証明書", value: "普通車と同様に必要です。" },
     { label: "リサイクル券（預託証明書）", value: "普通車と同様に必要です。" },
     { label: "軽自動車税（種別割）の納税に関する書類", value: "軽自動車税は市区町村が課税するため、納税関係の窓口も市区町村です。" },
-    { label: "印鑑（認印）", value: "軽自動車の名義変更は実印・印鑑登録証明書が不要で、認印で足りるのが一般的です。この手続きの軽さが普通車との大きな違いです。" },
+    { label: "印鑑（認印）", value: "軽自動車の名義変更は実印・印鑑登録証明書が不要で、認印で足りるのが一般的です。手続きの負担が軽い点が、普通車との大きな違いです。" },
   ];
 
   const saihakko = [
     {
       t: "車検証をなくした場合",
-      d: "普通車の車検証は、管轄の運輸支局で再交付の手続きができます。軽自動車の場合の窓口は軽自動車検査協会です。売却前に自分で再交付を受ける方法のほか、買取業者が段取りを案内してくれる場合もあるため、紛失に気づいた時点で正直に伝えるのが早道です。",
+      d: "普通車の車検証は、管轄の運輸支局で再交付の手続きができます。軽自動車の場合の窓口は軽自動車検査協会です。売却前に自分で再交付を受ける方法のほか、買取業者が手順を案内する場合もあるため、紛失に気づいた時点で業者に伝えることをおすすめします。",
     },
     {
       t: "自賠責保険証明書をなくした場合",
-      d: "契約している損害保険会社（共済含む）に連絡すると再発行の手続きができます。どこの保険会社か分からない場合は、車を購入した販売店に確認すると契約先が分かることがあります。",
+      d: "契約している損害保険会社（共済含む）に連絡すると再発行の手続きができます。契約先の保険会社がわからない場合は、車を購入した販売店に確認すると判明することがあります。",
     },
     {
       t: "リサイクル券をなくした場合",
@@ -68,7 +68,7 @@ export default function ShoruiGuidePage() {
     },
     {
       t: "納税証明書をなくした場合",
-      d: "普通車の自動車税（種別割）は都道府県税事務所、軽自動車税（種別割）は市区町村の窓口で、それぞれ納税証明書の再発行を受けられるのが一般的です。近年は納税確認の電子化が進み、紙の証明書が不要になるケースもあるため、必要かどうかを含めて売却先に確認しましょう。",
+      d: "普通車の自動車税（種別割）は都道府県税事務所、軽自動車税（種別割）は市区町村の窓口で、それぞれ納税証明書の再発行を受けられるのが一般的です。近年は納税確認の電子化が進み、紙の証明書が不要になるケースもあるため、必要かどうかを含めて売却先にご確認ください。",
     },
     {
       t: "印鑑登録をしていない場合",
@@ -78,19 +78,19 @@ export default function ShoruiGuidePage() {
 
   const cautions = [
     {
-      t: "車検証の住所・氏名が現在と違うときは追加書類",
-      d: "引っ越しや結婚などで車検証の記載と現在の住所・氏名が異なる場合、つながりを証明する書類（住民票の写しや戸籍関係の書類など）が追加で必要になるのが一般的です。複数回引っ越している場合はさらに書類が増えることがあるため、早めに売却先へ相談しましょう。",
+      t: "車検証の住所・氏名が現在と異なる場合は追加書類が必要",
+      d: "引っ越しや結婚などで車検証の記載と現在の住所・氏名が異なる場合、つながりを証明する書類（住民票の写しや戸籍関係の書類など）が追加で必要になるのが一般的です。複数回引っ越している場合はさらに書類が増えることがあるため、早めに売却先へご相談ください。",
     },
     {
-      t: "所有者欄が自分以外なら先に名義の整理",
+      t: "所有者欄が本人以外の場合は、先に名義を整理する",
       d: "車検証の所有者欄がローン会社やディーラーの名義（所有権留保）の場合は、書類を揃える前に所有権解除の手続きが必要です。また、故人名義の車は相続による移転登録が先になります。それぞれ状況別ページで手順を解説しています。",
     },
     {
-      t: "印鑑登録証明書には有効期限の扱いがある",
-      d: "名義変更に使う印鑑登録証明書は、発行から一定期間内のものを求められるのが一般的です。早く取りすぎて期限切れになると取り直しになるため、売却スケジュールが固まってから取得するのが無駄のない段取りです。",
+      t: "印鑑登録証明書の有効期限に注意する",
+      d: "名義変更に使う印鑑登録証明書は、発行から一定期間内のものを求められるのが一般的です。早く取得しすぎて期限切れになると再取得が必要になるため、売却スケジュールが確定してから取得することをおすすめします。",
     },
     {
-      t: "書類がないまま引き渡しだけ先行させない",
+      t: "書類が揃う前に引き渡しだけを先行させない",
       d: "書類が揃う前に車だけ引き渡すと、名義変更が完了しないまま時間が経つリスクがあります。入金条件が「書類確認後」となっている業者も多いため、引き渡しと書類提出のタイミングは契約時にセットで確認してください。",
     },
   ];
@@ -98,11 +98,11 @@ export default function ShoruiGuidePage() {
   const faqs = [
     {
       q: "普通車と軽自動車で必要書類はどう違いますか？",
-      a: "大きな違いは印鑑まわりです。普通車の名義変更は実印と印鑑登録証明書が必要になるのが一般的なのに対し、軽自動車は認印で足りるのが一般的です。また手続きの窓口も、普通車は運輸支局、軽自動車は軽自動車検査協会と異なります。",
+      a: "大きな違いは印鑑の扱いです。普通車の名義変更は実印と印鑑登録証明書が必要になるのが一般的なのに対し、軽自動車は認印で足りるのが一般的です。また手続きの窓口も、普通車は運輸支局、軽自動車は軽自動車検査協会と異なります。",
     },
     {
       q: "書類を紛失していても車を売れますか？",
-      a: "再発行すれば売却できます。車検証は運輸支局（軽自動車は軽自動車検査協会）、自賠責保険証明書は契約先の保険会社、納税証明書は都道府県税事務所（軽自動車は市区町村）が一般的な窓口です。紛失が分かった時点で売却先に伝えると、必要な段取りを案内してもらえます。",
+      a: "再発行すれば売却できます。車検証は運輸支局（軽自動車は軽自動車検査協会）、自賠責保険証明書は契約先の保険会社、納税証明書は都道府県税事務所（軽自動車は市区町村）が一般的な窓口です。紛失がわかった時点で売却先に伝えると、必要な手順の案内を受けられます。",
     },
     {
       q: "書類の手続きを代行してくれる業者はありますか？",
@@ -110,7 +110,7 @@ export default function ShoruiGuidePage() {
     },
     {
       q: "納税証明書は必ず必要ですか？",
-      a: "近年は納税確認の電子化が進み、紙の納税証明書が不要になるケースもあります。ただし納付直後で確認が取れない場合や、業者側の運用によって書面を求められる場合もあるため、必要かどうかは売却先に確認するのが確実です。再発行は普通車が都道府県税事務所、軽自動車が市区町村の窓口です。",
+      a: "近年は納税確認の電子化が進み、紙の納税証明書が不要になるケースもあります。ただし納付直後で確認が取れない場合や、業者側の運用によって書面を求められる場合もあるため、必要かどうかは売却先にご確認ください。再発行は普通車が都道府県税事務所、軽自動車が市区町村の窓口です。",
     },
   ];
 
@@ -121,21 +121,21 @@ export default function ShoruiGuidePage() {
       <Breadcrumbs
         items={[
           { name: "ホーム", path: "/" },
-          { name: "車売却の必要書類 完全ガイド", path: PATH },
+          { name: "車売却の必要書類", path: PATH },
         ]}
       />
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">REQUIRED DOCUMENTS</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          車売却の必要書類 完全ガイド｜普通車と軽自動車の違い・紛失時の再発行窓口
+          車売却の必要書類一覧｜普通車と軽自動車の違い・紛失時の再発行窓口
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          車の売却で意外とつまずくのが書類の準備です。査定額の交渉がまとまっても、書類が揃わなければ名義変更が進まず、入金も遅れます。このページでは、普通車と軽自動車それぞれで必要になりやすい書類の一覧、紛失した場合の再発行窓口、書類まわりでよくあるつまずきを一般知識として整理します。
+          車の売却では、書類の準備で手続きが滞ることが少なくありません。査定額の交渉がまとまっても、書類が揃わなければ名義変更が進まず、入金も遅れます。本ページでは、普通車と軽自動車それぞれで必要になりやすい書類の一覧、紛失した場合の再発行窓口、書類に関する注意点を一般知識として整理します。
         </p>
 
-        {/* 結論先出し */}
+        {/* 要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">先に結論</h2>
+          <h2 className="font-display text-lg text-steel-900">要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">
@@ -170,7 +170,7 @@ export default function ShoruiGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">軽自動車の売却で必要になりやすい書類</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
-            軽自動車の手続き窓口は軽自動車検査協会で、実印・印鑑登録証明書が不要（認印で可）なのが一般的です。そのぶん普通車より書類の準備は軽くなります。
+            軽自動車の手続き窓口は軽自動車検査協会で、実印・印鑑登録証明書が不要（認印で可）なのが一般的です。そのため、普通車より書類の準備の負担は軽くなります。
           </p>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
@@ -188,9 +188,9 @@ export default function ShoruiGuidePage() {
             ※ 上記は一般的な必要書類の整理です。個別の取引で必要な書類は売却先の業者・手続き窓口の案内に従ってください。
           </p>
           <div className="mt-6 border-l-2 border-vermilion bg-chalk-warm p-5">
-            <h3 className="font-display text-base text-steel-900">軽自動車だけを詳しく知りたい方へ</h3>
+            <h3 className="font-display text-base text-steel-900">軽自動車の必要書類について</h3>
             <p className="mt-2 text-[13px] leading-loose text-steel-700">
-              軽自動車は、印鑑の扱いだけでなく、手続きの窓口（軽自動車検査協会）、委任に使う書類の名称（申請依頼書）、車庫証明にあたる保管場所届出の地域差、廃車にする場合の手続き名まで普通車と異なります。軽自動車に絞った必要書類の一覧、普通車との違いの項目別整理、紛失時の再発行窓口は別ページにまとめました。
+              軽自動車は、印鑑の扱いだけでなく、手続きの窓口（軽自動車検査協会）、委任に使う書類の名称（申請依頼書）、車庫証明にあたる保管場所届出の地域差、廃車にする場合の手続き名まで普通車と異なります。軽自動車に絞った必要書類の一覧、普通車との違いの項目別整理、紛失時の再発行窓口は別ページにまとめています。
             </p>
             <p className="mt-3 text-[13px] leading-loose">
               <Link href="/guide/keijidousha-shorui/" className="text-vermilion underline underline-offset-4">
@@ -220,7 +220,7 @@ export default function ShoruiGuidePage() {
 
         {/* 注意点 */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">書類まわりで気をつけたいこと</h2>
+          <h2 className="section-title mb-6">書類に関する注意点</h2>
           <div className="space-y-4">
             {cautions.map((c) => (
               <div key={c.t} className="border-l-2 border-vermilion bg-chalk-card p-5">
@@ -233,14 +233,14 @@ export default function ShoruiGuidePage() {
 
         {/* 業者選び */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">書類に不安があるときの業者選び</h2>
+          <h2 className="section-title mb-2">書類に不安がある場合の業者選び</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            書類の再発行や名義変更の手続きに不安がある場合は、書類手続きの代行を無料と明記している業者を選ぶのも一つの考え方です。以下は当サイト掲載社の公式確認済み条件です（確認日: {CHECKED_LABEL}）。
+            書類の再発行や名義変更の手続きに不安がある場合は、書類手続きの代行を無料と明記している業者を選ぶ方法もあります。以下は当サイト掲載社の公式確認済み条件です（確認日: {CHECKED_LABEL}）。
           </p>
           <div className="border border-chalk-line bg-chalk-card p-5">
             <h3 className="font-display text-base text-steel-900">書類手続き無料を公式サイトに記載する掲載社</h3>
             <p className="mt-2 text-[13px] leading-loose text-steel-700">
-              <Link href="/gyosha/qsha-oh/" className="text-vermilion underline underline-offset-4">旧車王</Link>は名義変更等の費用一切なし、<Link href="/gyosha/gaisha-oh/" className="text-vermilion underline underline-offset-4">外車王</Link>は名義変更手数料無料、<Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>は廃車手続きの書類代行無料、<Link href="/gyosha/truck-oukoku/" className="text-vermilion underline underline-offset-4">トラック王国</Link>は書類手続き無料と、それぞれ公式サイトに記載しています（{CHECKED_LABEL}確認）。一方、書類代行が有料オプションの業者や、公式サイトで確認できなかった業者もあります。各社の条件は比較表で同じ物差しで確認してください。
+              <Link href="/gyosha/qsha-oh/" className="text-vermilion underline underline-offset-4">旧車王</Link>は名義変更等の費用一切なし、<Link href="/gyosha/gaisha-oh/" className="text-vermilion underline underline-offset-4">外車王</Link>は名義変更手数料無料、<Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>は廃車手続きの書類代行無料、<Link href="/gyosha/truck-oukoku/" className="text-vermilion underline underline-offset-4">トラック王国</Link>は書類手続き無料と、それぞれ公式サイトに記載しています（{CHECKED_LABEL}確認）。一方、書類代行が有料オプションの業者や、公式サイトで確認できなかった業者もあります。各社の条件は比較表にて同じ基準でご確認ください。
             </p>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -278,7 +278,7 @@ export default function ShoruiGuidePage() {
             <li>
               <Link href="/guide/zeikin/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">車売却と税金の基礎知識</span>
-                <span className="mt-1 block text-xs text-steel-500">納税証明書まわりの前提知識</span>
+                <span className="mt-1 block text-xs text-steel-500">納税証明書に関する基礎知識</span>
               </Link>
             </li>
             <li>
@@ -302,7 +302,7 @@ export default function ShoruiGuidePage() {
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">車買取27社の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">書類代行の有無を同じ物差しで比較</span>
+                <span className="mt-1 block text-xs text-steel-500">書類代行の有無を同じ基準で比較</span>
               </Link>
             </li>
             <li>
