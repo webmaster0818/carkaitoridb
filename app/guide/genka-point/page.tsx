@@ -81,13 +81,13 @@ export default function GuideGenkaPointPage() {
           <h2 className="section-title mb-5">査定で減額の対象になりやすい箇所</h2>
           <div className="space-y-4">
             <div className="border border-chalk-line bg-chalk-card p-5">
-              <h3 className="font-display text-base text-steel-900">外装: 傷・へこみ・塗装の状態</h3>
+              <h3 className="font-display text-base text-steel-900">外装の傷・へこみ・塗装の状態</h3>
               <p className="mt-3 text-sm leading-loose text-steel-700">
                 ボディの傷やへこみ、再塗装の跡、色あせなどは、査定でまず確認される代表的な項目です。中古車査定では傷の大きさや深さに応じて減点する基準が用いられるのが一般的で、パネルをまたぐ大きな損傷ほど影響が出やすいとされます。小さな擦り傷を過度に気にする必要はありませんが、状態を正確に伝えられるよう準備しておくことが大切です。
               </p>
             </div>
             <div className="border border-chalk-line bg-chalk-card p-5">
-              <h3 className="font-display text-base text-steel-900">内装: 臭い・汚れ・シートの傷み</h3>
+              <h3 className="font-display text-base text-steel-900">内装の臭い・汚れ・シートの傷み</h3>
               <p className="mt-3 text-sm leading-loose text-steel-700">
                 タバコやペットの臭い、シートの焦げ跡やシミ、天井の汚れなどは、次の買い手が敬遠しやすいため査定でも確認されやすい項目です。臭いは本人が気づきにくい点に注意が必要ですが、消臭・清掃によってある程度軽減できます。完全に消えなくても、車内を清潔に整えておくことは無料でできる有効な準備です。
               </p>
