@@ -11,7 +11,7 @@ import {
   getCompany,
   serviceTypeOf,
 } from "@/lib/companies";
-import { jaDate, jaMonth } from "@/lib/site";
+import { jaDate } from "@/lib/site";
 import { getProcedure } from "@/lib/procedures";
 
 export function generateStaticParams() {
@@ -26,7 +26,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCompany(slug);
   return {
-    title: c.seo_title ?? `${c.name}の買取条件｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`,
+    title: c.seo_title ?? `${c.name}の買取条件｜手数料・入金・キャンセル規定【公式確認】`,
     description: c.seo_description ?? (() => {
       const base = `${c.name}（運営: ${c.operator.name}）の査定料・引取・必要書類・入金タイミング・キャンセル規定を公式サイトで一次確認しています（${jaDate(c.confirmed_date)}確認）。`;
       const full = `${base}確認できなかった項目は「公式では確認できず」と記載しています。`;
@@ -75,7 +75,7 @@ export default async function GyoshaPage({
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">COMPANY FACT SHEET</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          {c.h1 ?? `${c.name}の買取条件｜手数料・入金・キャンセル規定【${jaMonth(c.confirmed_date)}公式確認】`}
+          {c.h1 ?? `${c.name}の買取条件｜手数料・入金・キャンセル規定【公式確認】`}
         </h1>
         {c.updated_date && (
           <p className="mt-3 text-xs text-steel-500">
