@@ -3,8 +3,23 @@ export const SITE_NAME = "車買取ナビ";
 export const SITE_TAGLINE = "公式情報にもとづく中立の車買取比較";
 export const CHECKED_DATE = "2026-08-07";
 export const CHECKED_LABEL = "2026年8月7日";
-/** 掲載社全体の確認期間（各社の確認日は data/companies.json の confirmed_date） */
-export const CHECKED_RANGE_LABEL = "2026年8月7日〜9月21日";
+import raw from "@/data/companies.json";
+
+/** 確認日（ISO）の一覧 → "2026年8月7日〜10月18日"（同年は終端の年を省略・1日だけなら単日） */
+export function checkedRangeLabel(isos: string[]): string {
+  const ds = [...isos].sort();
+  const from = ds[0], to = ds[ds.length - 1];
+  const f = jaDate(from);
+  if (from === to) return f;
+  const [fy] = from.split("-");
+  const [ty, tm, td] = to.split("-").map(Number);
+  return `${f}〜${String(ty) === fy ? "" : `${ty}年`}${tm}月${td}日`;
+}
+
+/** 掲載社全体の確認期間（data/companies.json の confirmed_date から算出） */
+export const CHECKED_RANGE_LABEL = checkedRangeLabel(
+  (raw as { confirmed_date: string }[]).map((c) => c.confirmed_date),
+);
 
 /** "2026-09-21" → "2026年9月" */
 export function jaMonth(iso: string): string {

@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CompanyCard from "@/components/CompanyCard";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { Category, categories, getCompany } from "@/lib/companies";
-import { CHECKED_RANGE_LABEL } from "@/lib/site";
+import { checkedRangeLabel } from "@/lib/site";
 
 export interface HubSectionItem {
   t: string;
@@ -75,7 +75,7 @@ export default function CategoryHub({
         <section className="mt-14">
           <h2 className="section-title mb-2">本カテゴリの掲載業者</h2>
           <p className="mb-6 text-sm leading-loose text-steel-600">
-            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_RANGE_LABEL}。各社の確認日は業者ページに記載）。「公式では確認できず」と表示している項目は、公式サイト上で該当する記載を確認できなかったものです。
+            各社の条件は公式サイトを一次確認したものです（確認日: {checkedRangeLabel(hubCompanies.map((c) => c.confirmed_date))}。各社の確認日は業者ページに記載）。「公式では確認できず」と表示している項目は、公式サイト上で該当する記載を確認できなかったものです。
           </p>
           <div className="grid gap-5 lg:grid-cols-2">
             {hubCompanies.map((c) => (
