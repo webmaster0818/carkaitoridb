@@ -223,6 +223,14 @@ export default async function GyoshaPage({
         <section className="mt-14">
           <h2 className="section-title mb-5">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
+            {(c.related_links ?? []).map((r) => (
+              <li key={r.path}>
+                <Link href={r.path} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                  <span className="font-display text-steel-900">{r.label}</span>
+                  <span className="mt-1 block text-xs text-steel-500">{r.desc}</span>
+                </Link>
+              </li>
+            ))}
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">車買取27社の統一比較表</span>

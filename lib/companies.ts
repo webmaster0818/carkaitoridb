@@ -40,6 +40,8 @@ export interface Company {
   updated_date?: string;
   /** 業者別の追加FAQ（公式確認済みの内容のみ。共通FAQの前に出す） */
   extra_faq?: { q: string; a: string }[];
+  /** 関連ガイド（サイト内リンク・関連ページ欄の先頭に出す） */
+  related_links?: { path: string; label: string; desc: string }[];
 }
 
 export const companies = raw as unknown as Company[];
