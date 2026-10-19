@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
-import { SITE_NAME, SITE_URL, OPERATOR, CHECKED_LABEL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, OPERATOR, GUIDE_TERMS_CHECKED_LABEL } from "@/lib/site";
 
 const TITLE = "車売却の必要書類一覧｜普通車と軽自動車の違い・紛失時の再発行窓口";
 const DESC =
@@ -21,7 +21,7 @@ const articleLd = {
   headline: TITLE,
   description: DESC,
   datePublished: "2026-08-10",
-  dateModified: "2026-09-12",
+  dateModified: "2026-10-19",
   mainEntityOfPage: `${SITE_URL}${PATH}`,
   author: { "@type": "Organization", name: OPERATOR.name },
   publisher: { "@type": "Organization", name: SITE_NAME },
@@ -106,7 +106,7 @@ export default function ShoruiGuidePage() {
     },
     {
       q: "書類の手続きを代行してくれる業者はありますか？",
-      a: "当サイト掲載社では、旧車王が名義変更等の費用一切なし、外車王が名義変更手数料無料、ハイシャルが廃車手続きの書類代行無料、トラック王国が書類手続き無料と、それぞれ公式サイトに記載しています（2026年8月7日確認）。代行の範囲は各社で異なるため、詳細は各社にご確認ください。",
+      a: "当サイト掲載社では、旧車王が名義変更等の費用一切なし、外車王が名義変更手数料無料、ハイシャルが廃車手続きの書類代行無料、トラック王国が書類手続き無料と、それぞれ公式サイトに記載しています（2026年10月19日確認）。代行の範囲は各社で異なるため、詳細は各社にご確認ください。",
     },
     {
       q: "納税証明書は必ず必要ですか？",
@@ -235,12 +235,12 @@ export default function ShoruiGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">書類に不安がある場合の業者選び</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            書類の再発行や名義変更の手続きに不安がある場合は、書類手続きの代行を無料と明記している業者を選ぶ方法もあります。以下は当サイト掲載社の公式確認済み条件です（確認日: {CHECKED_LABEL}）。
+            書類の再発行や名義変更の手続きに不安がある場合は、書類手続きの代行を無料と明記している業者を選ぶ方法もあります。以下は当サイト掲載社の公式確認済み条件です（確認日: {GUIDE_TERMS_CHECKED_LABEL}）。
           </p>
           <div className="border border-chalk-line bg-chalk-card p-5">
             <h3 className="font-display text-base text-steel-900">書類手続き無料を公式サイトに記載する掲載社</h3>
             <p className="mt-2 text-[13px] leading-loose text-steel-700">
-              <Link href="/gyosha/qsha-oh/" className="text-vermilion underline underline-offset-4">旧車王</Link>は名義変更等の費用一切なし、<Link href="/gyosha/gaisha-oh/" className="text-vermilion underline underline-offset-4">外車王</Link>は名義変更手数料無料、<Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>は廃車手続きの書類代行無料、<Link href="/gyosha/truck-oukoku/" className="text-vermilion underline underline-offset-4">トラック王国</Link>は書類手続き無料と、それぞれ公式サイトに記載しています（{CHECKED_LABEL}確認）。一方、書類代行が有料オプションの業者や、公式サイトで確認できなかった業者もあります。各社の条件は比較表にて同じ基準でご確認ください。
+              <Link href="/gyosha/qsha-oh/" className="text-vermilion underline underline-offset-4">旧車王</Link>は名義変更等の費用一切なし、<Link href="/gyosha/gaisha-oh/" className="text-vermilion underline underline-offset-4">外車王</Link>は名義変更手数料無料、<Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>は廃車手続きの書類代行無料、<Link href="/gyosha/truck-oukoku/" className="text-vermilion underline underline-offset-4">トラック王国</Link>は書類手続き無料と、それぞれ公式サイトに記載しています（{GUIDE_TERMS_CHECKED_LABEL}確認）。一方、書類代行が有料オプションの業者や、公式サイトで確認できなかった業者もあります。各社の条件は比較表にて同じ基準でご確認ください。
             </p>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
