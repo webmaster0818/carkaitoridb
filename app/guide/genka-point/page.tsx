@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
-import { CHECKED_LABEL, SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITUATION_CHECKED_LABEL, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "査定で減額されやすい箇所と事前にできる準備｜洗車・記録簿・申告のポイント",
@@ -119,7 +119,7 @@ export default function GuideGenkaPointPage() {
             事故歴・修復歴・故障箇所・冠水歴など、申告を求められた事項を隠したり曖昧にしたりするのは避けるべきです。契約時の申告内容と実際の状態が食い違うと、車の引き渡し後に「再査定の結果、減額します」と求められる、いわゆる二重査定のトラブルに発展するおそれがあります。減額の責任がどちらにあるかで揉める事態は、最初の申告が正確であれば大部分を避けられます。
           </p>
           <p className="mt-4 text-sm leading-loose text-steel-700">
-            修復歴などは業者側の検査や流通過程の検査で判明することが多く、隠すことで有利になる仕組みではありません。不利に見える情報もあらかじめ伝え、それを織り込んだ金額で契約するほうが、後から覆されることがないため確実です。なお、業界には契約後の減額をしない方針を掲げる業者もあり、掲載社では旧車王が二重査定なし（JPUC適正買取店）を、ハイシャルが見積後の減額一切なしを公式サイトで訴求しています（{CHECKED_LABEL}確認）。こうした規定の有無は業者選びの比較材料になります。
+            修復歴などは業者側の検査や流通過程の検査で判明することが多く、隠すことで有利になる仕組みではありません。不利に見える情報もあらかじめ伝え、それを織り込んだ金額で契約するほうが、後から覆されることがないため確実です。なお、業界には契約後の減額をしない方針を掲げる業者もあり、掲載社では旧車王が「二重査定いたしません」「契約後の減額は一切ありません」（JPUC適正買取店）と、ハイシャルが「契約完了後や実車確認後の減額は一切ございません」と公式サイトに記載しています（{SITUATION_CHECKED_LABEL}確認）。こうした規定の有無は業者選びの比較材料になります。
           </p>
         </section>
 

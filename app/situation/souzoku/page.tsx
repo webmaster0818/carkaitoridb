@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
-import { SITE_NAME, SITE_URL, OPERATOR, CHECKED_LABEL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, OPERATOR, SITUATION_CHECKED_LABEL } from "@/lib/site";
 
 const TITLE = "相続した車を売る手続きと注意点｜名義変更（移転登録）から売却までの流れ";
 const DESC =
@@ -38,7 +38,7 @@ export default function SouzokuPage() {
   const steps = [
     {
       t: "車検証で「所有者」の欄を確認する",
-      d: "最初に行うのは車検証の確認です。所有者欄が故人の名前であれば相続手続きに進みますが、所有者欄がローン会社やディーラーの名義になっている場合（所有権留保）は、ローンの完済・所有権解除の手続きが先に必要になります。使用者が故人であっても、所有者が別の名義になっている場合は少なくありません。ローンが残っている車の売却方法は別ページで解説しています。",
+      d: "最初に行うのは車検証の確認です（2023年1月以降に交付された電子車検証では、所有者の氏名又は名称は券面に記載されていないため、国土交通省の「車検証閲覧アプリ」または「自動車検査証記録事項」で確認します）。所有者が故人の名前であれば相続手続きに進みますが、所有者欄がローン会社やディーラーの名義になっている場合（所有権留保）は、ローンの完済・所有権解除の手続きが先に必要になります。使用者が故人であっても、所有者が別の名義になっている場合は少なくありません。ローンが残っている車の売却方法は別ページで解説しています。",
     },
     {
       t: "相続人を確定し、車を誰が相続するか決める",
@@ -46,7 +46,7 @@ export default function SouzokuPage() {
     },
     {
       t: "移転登録（名義変更）を行う",
-      d: "普通車の相続による名義変更は、管轄の運輸支局での移転登録という手続きです。遺産分割協議書、被相続人と相続人の関係がわかる戸籍関係書類、新しい所有者の印鑑登録証明書などが必要になるのが一般的で、車の価額や相続の形によっては簡略な書面で足りる取り扱いもあります。要件は個別のケースで変わるため、書式や添付書類は管轄の運輸支局または行政書士・司法書士などの専門家に確認するのが確実です。軽自動車は運輸支局ではなく軽自動車検査協会での手続きとなり、必要書類も普通車より簡素とされています。",
+      d: "普通車の相続による名義変更は、管轄の運輸支局での移転登録という手続きです。遺産分割協議書、被相続人と相続人の関係がわかる戸籍関係書類、新しい所有者の印鑑登録証明書などが必要になるのが一般的で、相続する自動車の査定価格が100万円以下の場合は、査定書等を添付して遺産分割協議書の代わりに「遺産分割協議成立申立書」で申請できる取り扱いもあります（東北運輸局・北海道運輸局の案内、2026年10月20日確認）。要件は個別のケースで変わるため、書式や添付書類は管轄の運輸支局または行政書士・司法書士などの専門家に確認するのが確実です。軽自動車は運輸支局ではなく軽自動車検査協会での手続きとなり、同協会の案内では、相続の場合は所有者が亡くなった事実と新しい所有者が相続人であることを確認できる戸籍謄本等または法定相続情報一覧図（いずれもコピー可）を用意する扱いです（2026年10月20日確認）。",
     },
     {
       t: "車の状態に合わせて売却方法を選ぶ",
@@ -92,11 +92,11 @@ export default function SouzokuPage() {
     },
     {
       q: "長年放置されて動かない車を相続しました。売れますか？",
-      a: "廃車買取という選択肢があります。当サイト掲載のハイシャルは、事故車・不動車・年式20年超の車も対応し、レッカー引取無料（全国47都道府県・一部島しょ部除く）と公式サイトに記載しています（2026年8月7日確認）。詳しくは廃車・事故車カテゴリのページをご覧ください。",
+      a: "廃車買取という選択肢があります。当サイト掲載のハイシャルは、不動車・事故車・故人名義の車などでも引き取り・手続きの費用はかからないとし、全国どこでもレッカー代などの引き取り費用無料（一部の島しょ部を除く）と公式サイトに記載しています（2026年10月20日確認）。詳しくは廃車・事故車カテゴリのページをご覧ください。",
     },
     {
       q: "古い車ですが、価値があるかどうかわかりません。",
-      a: "年式が古い車は一般の査定で評価されにくい一方、旧車として専門業者に評価される可能性があります。掲載している旧車王は、10年以上古い車を主な対象とする旧車特化のサービスで、北海道から沖縄まで離島を含め全国無料で出張査定を行う旨を公式サイトに記載しています（2026年8月7日確認）。",
+      a: "年式が古い車は一般の査定で評価されにくい一方、旧車として専門業者に評価される可能性があります。掲載している旧車王は、10年以上古い車を主な対象とする旧車特化のサービスで、北海道から沖縄まで離島を含め全国無料で出張査定を行う旨を公式サイトに記載しています（2026年10月20日確認）。",
     },
   ];
 
@@ -170,19 +170,19 @@ export default function SouzokuPage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">相続した車の売却先の選び方</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            相続車両は実家に置かれたままの車や、ご自身では動かせない車が多いため、出張査定や引き取りに対応する業者を選ぶのが現実的です。以下は当サイト掲載社のうち関連するサービスの公式確認済み条件です（確認日: {CHECKED_LABEL}）。
+            相続車両は実家に置かれたままの車や、ご自身では動かせない車が多いため、出張査定や引き取りに対応する業者を選ぶのが現実的です。以下は当サイト掲載社のうち関連するサービスの公式確認済み条件です（確認日: {SITUATION_CHECKED_LABEL}）。
           </p>
           <div className="space-y-4">
             <div className="border border-chalk-line bg-chalk-card p-5">
               <h3 className="font-display text-base text-steel-900">出張査定に対応する掲載社</h3>
               <p className="mt-2 text-[13px] leading-loose text-steel-700">
-                <Link href="/gyosha/gaisha-master/" className="text-vermilion underline underline-offset-4">外車マスター</Link>は輸入車対象で出張査定を含め査定無料、<Link href="/gyosha/gaisha-oh/" className="text-vermilion underline underline-offset-4">外車王</Link>は全国出張査定（出張料・査定料無料）、<Link href="/gyosha/qsha-oh/" className="text-vermilion underline underline-offset-4">旧車王</Link>は北海道から沖縄まで離島含め全国無料出張査定と、それぞれ公式サイトに記載しています（{CHECKED_LABEL}確認）。実家の車庫に置かれたままの車でも、現地での出張査定を前提に相談できます。
+                <Link href="/gyosha/gaisha-master/" className="text-vermilion underline underline-offset-4">外車マスター</Link>は輸入車専門で査定無料（自宅・勤務先など希望の場所への出張査定、店舗への持ち込みも可）、<Link href="/gyosha/gaisha-oh/" className="text-vermilion underline underline-offset-4">外車王</Link>は日本全国で無料査定・出張査定も無料、<Link href="/gyosha/qsha-oh/" className="text-vermilion underline underline-offset-4">旧車王</Link>は北海道から沖縄まで離島も含め無料で出張査定と、それぞれ公式サイトに記載しています（{SITUATION_CHECKED_LABEL}確認）。実家の車庫に置かれたままの車でも、現地での出張査定を前提に相談できます。
               </p>
             </div>
             <div className="border border-chalk-line bg-chalk-card p-5">
               <h3 className="font-display text-base text-steel-900">査定額がつかない古い車は廃車買取へ</h3>
               <p className="mt-2 text-[13px] leading-loose text-steel-700">
-                長年放置された車や不動車は、一般の買取査定では値がつかないことがあります。その場合も、パーツ・資源としての価値を前提に買い取る廃車買取という仕組みがあります。掲載しているハイシャルはレッカー引取無料（全国47都道府県・一部島しょ部除く）、廃車手続きの書類代行無料と公式サイトに記載しています（{CHECKED_LABEL}確認）。詳しくは<Link href="/haisha/" className="text-vermilion underline underline-offset-4">廃車・事故車・不動車の買取</Link>をご覧ください。
+                長年放置された車や不動車は、一般の買取査定では値がつかないことがあります。その場合も、パーツ・資源としての価値を前提に買い取る廃車買取という仕組みがあります。掲載しているハイシャルは、査定料・レッカー代などの引き取り費用・廃車手続き代行費用をすべて0円とし、全国どこでもレッカー代などの引き取り費用無料（一部の島しょ部を除く）と公式サイトに記載しています（{SITUATION_CHECKED_LABEL}確認）。詳しくは<Link href="/haisha/" className="text-vermilion underline underline-offset-4">廃車・事故車・不動車の買取</Link>をご覧ください。
               </p>
             </div>
             <div className="border border-chalk-line bg-chalk-card p-5">

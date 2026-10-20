@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
-import { SITE_NAME, SITE_URL, OPERATOR, CHECKED_LABEL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, OPERATOR, SITUATION_CHECKED_LABEL } from "@/lib/site";
 
 const TITLE = "車検切れの車を売る方法｜公道を走行できない車の売却手順と注意点";
 const DESC =
@@ -31,14 +31,14 @@ export default function ShakenkirePage() {
   const conclusions = [
     "車検が切れていても車は売却できます。車検の有無は、売却の可否ではなく、車の運び方に関わる問題です。",
     "車検切れの車で公道を走行することは、原則としてできません。売却は、レッカー車・積載車による引き取りを前提に準備するのが基本です。",
-    "引き取り費用の有無によって手取り額が変わります。当サイト掲載のハイシャルはレッカー引取無料（全国47都道府県・一部島しょ部除く）と公式サイトに記載しています（2026年8月7日確認）。",
+    "引き取り費用の有無によって手取り額が変わります。当サイト掲載のハイシャルは全国どこでもレッカー代などの引き取り費用無料（一部の島しょ部を除く）と公式サイトに記載しています（2026年10月20日確認）。",
     "売却のためだけに車検を取り直す必要は、通常ありません。車検費用をかけても、その分が査定額に反映されるとは限らないためです。",
   ];
 
   const steps = [
     {
       t: "車検証で満了日と車の状態を確認する",
-      d: "まず車検証（自動車検査証）で車検の満了日を確認し、あわせてエンジンがかかるか、自走できる状態かを把握します。車検切れの車は法律上公道を走行できないだけで、車としての価値がなくなったわけではありません。エンジンの始動可否、外装や機関の状態といった情報は、査定申し込み時に正確に伝える材料になります。",
+      d: "まず車検証（自動車検査証）で車検の有効期間の満了日を確認し（2023年1月以降に交付された電子車検証では満了日が券面に記載されていないため、国土交通省の「車検証閲覧アプリ」または「自動車検査証記録事項」で確認します）、あわせてエンジンがかかるか、自走できる状態かを把握します。車検切れの車は法律上公道を走行できないだけで、車としての価値がなくなったわけではありません。エンジンの始動可否、外装や機関の状態といった情報は、査定申し込み時に正確に伝える材料になります。",
     },
     {
       t: "引き取りを前提に売却先を探す",
@@ -195,7 +195,7 @@ export default function ShakenkirePage() {
     },
     {
       t: "必要書類は普通車より少ないのが一般的",
-      d: "軽自動車の名義変更は実印と印鑑登録証明書が不要で、認印で足りるのが一般的です。車検が切れている場合でもこの点は変わりません。軽自動車に絞った必要書類の一覧と、紛失時の再発行窓口は専用ページにまとめています。",
+      d: "軽自動車検査協会の案内では、軽自動車の名義変更に実印や印鑑登録証明書の提出は求められておらず、新しい使用者の住所を証する書面として住民票の写しまたは印鑑（登録）証明書のいずれか1点を用意する扱いです（2026年10月20日確認）。軽自動車に絞った必要書類の一覧と、紛失時の再発行窓口は専用ページにまとめています。",
     },
     {
       t: "運び方の考え方は普通車と同じ",
@@ -206,7 +206,7 @@ export default function ShakenkirePage() {
   const faqs = [
     {
       q: "車検が切れた車でも本当に売れますか？",
-      a: "売却できます。車検切れは公道を自走できないという制約であり、車の価値そのものがなくなるわけではありません。当サイト掲載のハイシャルは、車検切れを含む「どんな車でも対応」とし、レッカー引取無料（全国47都道府県・一部島しょ部除く）と公式サイトに記載しています（2026年8月7日確認）。",
+      a: "売却できます。車検切れは公道を自走できないという制約であり、車の価値そのものがなくなるわけではありません。当サイト掲載のハイシャルは、年式の古い車・事故車・動かない車・車検切れの車も買取の対象とし、全国どこでもレッカー代などの引き取り費用無料（一部の島しょ部を除く）と公式サイトに記載しています（2026年10月20日確認）。",
     },
     {
       q: "車検切れの車はどうやって業者に渡すのですか？",
@@ -440,19 +440,19 @@ export default function ShakenkirePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">車検切れの車の売却先の選び方</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            車検切れの車は引き取りが必須となるため、引き取り費用が無料の業者を選べるかどうかが手取り額に直結します。以下は、当サイト掲載社について公式サイトで確認した条件です（確認日: {CHECKED_LABEL}）。
+            車検切れの車は引き取りが必須となるため、引き取り費用が無料の業者を選べるかどうかが手取り額に直結します。以下は、当サイト掲載社について公式サイトで確認した条件です（確認日: {SITUATION_CHECKED_LABEL}）。
           </p>
           <div className="space-y-4">
             <div className="border border-chalk-line bg-chalk-card p-5">
               <h3 className="font-display text-base text-steel-900">引取無料のハイシャル（廃車買取）</h3>
               <p className="mt-2 text-[13px] leading-loose text-steel-700">
-                掲載している<Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>は、事故車・不動車を含む「どんな車でも対応」とし、レッカー引取無料（全国47都道府県・一部島しょ部除く）、廃車手続きの書類代行無料、最短当日引き取りと公式サイトに記載しています（{CHECKED_LABEL}確認）。一方、成約後のキャンセルにはキャンセル料30,000円の記載もあるため（同日確認）、契約前に必ず条件をご確認ください。廃車買取の全体像は<Link href="/haisha/" className="text-vermilion underline underline-offset-4">廃車・事故車・不動車の買取</Link>にまとめています。
+                掲載している<Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>は、不動車・事故車を含めて引き取り・手続き代行の費用はかからないとし、全国どこでもレッカー代などの引き取り費用無料（一部の島しょ部を除く）、午前中に連絡すれば当日の引き取りができる場合もあると公式サイトに記載しています（{SITUATION_CHECKED_LABEL}確認）。一方、成約後に取引自体をキャンセルする場合はキャンセル料金30,000円がかかるとの記載もあるため（同日確認）、契約前に必ず条件をご確認ください。廃車買取の全体像は<Link href="/haisha/" className="text-vermilion underline underline-offset-4">廃車・事故車・不動車の買取</Link>にまとめています。
               </p>
             </div>
             <div className="border border-chalk-line bg-chalk-card p-5">
               <h3 className="font-display text-base text-steel-900">値が付く可能性のある車は出張査定で比較する</h3>
               <p className="mt-2 text-[13px] leading-loose text-steel-700">
-                車検が切れていても年式が新しい車や輸入車・旧車は、専門業者の出張査定で評価される可能性があります。掲載社では旧車王が離島含む全国無料出張査定・車輌引き上げ料金を含む引取無料と公式サイトに記載しています（{CHECKED_LABEL}確認）。カテゴリ別の考え方は<Link href="/kyusha/" className="text-vermilion underline underline-offset-4">旧車・クラシックカー</Link>や<Link href="/gaisha/" className="text-vermilion underline underline-offset-4">外車・輸入車</Link>のページをご覧ください。
+                車検が切れていても年式が新しい車や輸入車・旧車は、専門業者の出張査定で評価される可能性があります。掲載社では旧車王が北海道から沖縄まで離島も含めて無料で出張査定し、提示した買取金額に車輌の引き上げ料金も含まれ追加費用はかからないと公式サイトに記載しています（{SITUATION_CHECKED_LABEL}確認）。カテゴリ別の考え方は<Link href="/kyusha/" className="text-vermilion underline underline-offset-4">旧車・クラシックカー</Link>や<Link href="/gaisha/" className="text-vermilion underline underline-offset-4">外車・輸入車</Link>のページをご覧ください。
               </p>
             </div>
           </div>
