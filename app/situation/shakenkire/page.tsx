@@ -21,7 +21,7 @@ const articleLd = {
   headline: TITLE,
   description: DESC,
   datePublished: "2026-08-10",
-  dateModified: "2026-09-12",
+  dateModified: "2026-10-20",
   mainEntityOfPage: `${SITE_URL}${PATH}`,
   author: { "@type": "Organization", name: OPERATOR.name },
   publisher: { "@type": "Organization", name: SITE_NAME },
@@ -195,7 +195,7 @@ export default function ShakenkirePage() {
     },
     {
       t: "必要書類は普通車より少ないのが一般的",
-      d: "軽自動車検査協会の案内では、軽自動車の名義変更に実印や印鑑登録証明書の提出は求められておらず、新しい使用者の住所を証する書面として住民票の写しまたは印鑑（登録）証明書のいずれか1点を用意する扱いです（2026年10月20日確認）。軽自動車に絞った必要書類の一覧と、紛失時の再発行窓口は専用ページにまとめています。",
+      d: "軽自動車検査協会の案内では、名義変更の必要書類に売る人（旧所有者）の実印・印鑑登録証明書は含まれておらず、申請手続きの押印・署名も令和3年1月4日から不要です。住所を証する書面（住民票の写しまたは印鑑（登録）証明書のいずれか1点）は、売る人ではなく新しく使用者になる人（買う側）が用意する書類です（2026年10月20日確認）。軽自動車に絞った必要書類の一覧と、紛失時の再発行窓口は専用ページにまとめています。",
     },
     {
       t: "運び方の考え方は普通車と同じ",
@@ -497,7 +497,7 @@ export default function ShakenkirePage() {
             <li>
               <Link href="/guide/keijidousha-shorui/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">軽自動車の売却に必要な書類</span>
-                <span className="mt-1 block text-xs text-steel-500">認印で足りる理由と窓口の違い</span>
+                <span className="mt-1 block text-xs text-steel-500">実印・印鑑証明書が要らない理由と窓口の違い</span>
               </Link>
             </li>
             <li>

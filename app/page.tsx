@@ -134,7 +134,7 @@ export default function HomePage() {
           <ul className="grid gap-3 text-sm md:grid-cols-2 lg:grid-cols-3">
             {[
               { href: "/kei/", title: "軽自動車の買取", desc: "売却前の全体像と売却先の選び方" },
-              { href: "/guide/keijidousha-shorui/", title: "軽自動車の売却に必要な書類", desc: "認印で足りる理由と再発行窓口" },
+              { href: "/guide/keijidousha-shorui/", title: "軽自動車の売却に必要な書類", desc: "実印・印鑑証明書が要らない理由と再発行窓口" },
               { href: "/maker/suzuki/", title: "スズキ車の買取", desc: "軽自動車として売るときの確認事項" },
               { href: "/maker/daihatsu/", title: "ダイハツ車の買取", desc: "乗用・貨物の登録区分の確認" },
               { href: "/maker/toyota/", title: "トヨタ車の買取", desc: "普通車の書類と下取りとの違い" },

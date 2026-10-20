@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, OPERATOR, GUIDE_TERMS_CHECKED_LABEL } from "@/lib/
 
 const TITLE = "車売却の必要書類一覧｜普通車と軽自動車の違い・紛失時の再発行窓口";
 const DESC =
-  "車の売却に必要な書類を一覧で整理しています。普通車は実印と印鑑登録証明書が必要、軽自動車は認印で足りるのが一般的という違いから、車検証・自賠責保険証明書・リサイクル券・納税証明書の役割、紛失時の再発行窓口（運輸支局・都道府県税事務所など）までを解説します。";
+  "車の売却に必要な書類を一覧で整理しています。普通車は実印と印鑑登録証明書が必要、軽自動車は売る人の実印・印鑑登録証明書が不要という違いから、車検証・自賠責保険証明書・リサイクル券・納税証明書の役割、紛失時の再発行窓口（運輸支局・都道府県税事務所など）までを解説します。";
 const PATH = "/guide/shorui/";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const articleLd = {
   headline: TITLE,
   description: DESC,
   datePublished: "2026-08-10",
-  dateModified: "2026-10-19",
+  dateModified: "2026-10-20",
   mainEntityOfPage: `${SITE_URL}${PATH}`,
   author: { "@type": "Organization", name: OPERATOR.name },
   publisher: { "@type": "Organization", name: SITE_NAME },
@@ -29,7 +29,7 @@ const articleLd = {
 
 export default function ShoruiGuidePage() {
   const conclusions = [
-    "必要書類は普通車と軽自動車で異なります。普通車は実印と印鑑登録証明書が必要、軽自動車は認印で足りるのが一般的です。",
+    "必要書類は普通車と軽自動車で異なります。普通車は実印と印鑑登録証明書が必要になるのが一般的です。軽自動車は売る人の実印・印鑑登録証明書が名義変更の必要書類に含まれておらず、軽自動車検査協会の申請手続きは押印・署名も不要です（2026年10月20日確認）。",
     "共通して必要になりやすいのは、車検証（自動車検査証）・自賠責保険証明書・リサイクル券・納税に関する書類です。",
     "書類を紛失している場合でも、再発行により売却は可能です。車検証は運輸支局（軽自動車は軽自動車検査協会）、納税証明書は都道府県税事務所（軽自動車は市区町村）など、それぞれ再発行の窓口があります。",
     "名義変更などの書類手続きを無料で代行すると公式サイトに記載する業者もあります。書類に不安がある場合は、代行の範囲と費用を比較項目に加えることをおすすめします。",
@@ -50,7 +50,7 @@ export default function ShoruiGuidePage() {
     { label: "自賠責保険証明書", value: "普通車と同様に必要です。" },
     { label: "リサイクル券（預託証明書）", value: "普通車と同様に必要です。" },
     { label: "軽自動車税（種別割）の納税に関する書類", value: "軽自動車税は市区町村が課税するため、納税関係の窓口も市区町村です。" },
-    { label: "印鑑（認印）", value: "軽自動車の名義変更は実印・印鑑登録証明書が不要で、認印で足りるのが一般的です。手続きの負担が軽い点が、普通車との大きな違いです。" },
+    { label: "印鑑（業者の案内による）", value: "軽自動車検査協会の名義変更の必要書類に、売る人の実印・印鑑登録証明書は含まれていません。申請手続きの押印・署名も令和3年1月4日から不要です（2026年10月20日確認）。買取業者によっては自社の書類用に「印鑑（認印可）」の持参を案内しているため、売却先の案内に従ってください。" },
   ];
 
   const saihakko = [
@@ -98,7 +98,7 @@ export default function ShoruiGuidePage() {
   const faqs = [
     {
       q: "普通車と軽自動車で必要書類はどう違いますか？",
-      a: "大きな違いは印鑑の扱いです。普通車の名義変更は実印と印鑑登録証明書が必要になるのが一般的なのに対し、軽自動車は認印で足りるのが一般的です。また手続きの窓口も、普通車は運輸支局、軽自動車は軽自動車検査協会と異なります。",
+      a: "大きな違いは印鑑の扱いです。普通車の名義変更は実印と印鑑登録証明書が必要になるのが一般的なのに対し、軽自動車は売る人の実印・印鑑登録証明書が名義変更の必要書類に含まれていません（軽自動車検査協会・2026年10月20日確認）。また手続きの窓口も、普通車は運輸支局、軽自動車は軽自動車検査協会と異なります。",
     },
     {
       q: "書類を紛失していても車を売れますか？",
@@ -170,7 +170,7 @@ export default function ShoruiGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">軽自動車の売却で必要になりやすい書類</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
-            軽自動車の手続き窓口は軽自動車検査協会で、実印・印鑑登録証明書が不要（認印で可）なのが一般的です。そのため、普通車より書類の準備の負担は軽くなります。
+            軽自動車の手続き窓口は軽自動車検査協会で、売る人の実印・印鑑登録証明書は名義変更の必要書類に含まれていません。新しい使用者（買う側）が住所を証する書面として住民票の写しまたは印鑑（登録）証明書のいずれか1点を用意します（2026年10月20日確認）。そのため、普通車より書類の準備の負担は軽くなります。
           </p>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
@@ -194,7 +194,7 @@ export default function ShoruiGuidePage() {
             </p>
             <p className="mt-3 text-[13px] leading-loose">
               <Link href="/guide/keijidousha-shorui/" className="text-vermilion underline underline-offset-4">
-                詳しくは「軽自動車の売却に必要な書類｜認印で足りる理由と普通車との違い・再発行窓口」へ
+                詳しくは「軽自動車の売却に必要な書類｜実印・印鑑証明書が要らない理由と普通車との違い・再発行窓口」へ
               </Link>
             </p>
           </div>
@@ -272,7 +272,7 @@ export default function ShoruiGuidePage() {
             <li>
               <Link href="/guide/keijidousha-shorui/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">軽自動車の売却に必要な書類</span>
-                <span className="mt-1 block text-xs text-steel-500">認印で足りる理由と普通車との違い</span>
+                <span className="mt-1 block text-xs text-steel-500">実印・印鑑証明書が要らない理由と普通車との違い</span>
               </Link>
             </li>
             <li>
