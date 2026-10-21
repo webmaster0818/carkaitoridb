@@ -187,7 +187,7 @@ export default function MakerSuzukiPage() {
         <Link href="/gyosha/carseven/" className="text-vermilion underline underline-offset-4">カーセブン</Link>
         は買取対象として国産車および輸入車を掲載し、国産のブランド名としてスズキを含むメーカー名を公式サイトに挙げています（2026年9月11日確認）。
         <Link href="/gyosha/sellca/" className="text-vermilion underline underline-offset-4">セルカ</Link>
-        は対象として乗用車全般（軽・セダン・SUV・ミニバン・トラック・輸入車等）を公式サイトに掲載しています（2026年8月7日確認）。
+        は、公式トップの買取相場検索でメーカーにスズキを、ボディタイプに軽自動車・セダン・SUV・ミニバン等を掲載し、出品できない車として、車検証がない車や国内未登録車（並行車両）などを公式FAQに挙げています（2026年10月21日確認）。
         <Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>
         は、対応地域のページで「事故車・動かない車・年式が古い車・走行距離10万キロ超えの車」を対象に挙げ、「査定料、レッカー代などの引き取り費用、廃車手続き代行費用もすべて0円」と公式サイトに記載しています（2026年10月20日確認）。個別の車両の扱いは状態によって変わるため、最終的な可否は各社にご確認ください。
       </p>
