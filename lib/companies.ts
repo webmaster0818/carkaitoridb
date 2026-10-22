@@ -27,6 +27,8 @@ export interface Company {
   uketsuke?: string | null;
   nyukin?: string | null;
   cancel?: string | null;
+  /** キャンセルFAQの問い（公式規定が成約前の話など、既定の「契約後に〜」と合わない場合に上書き） */
+  cancel_q?: string;
   features: string[];
   confirmed_date: string;
   note?: string | null;
@@ -182,7 +184,7 @@ export function companyFaq(c: Company): { q: string; a: string }[] {
         : `公式サイトの記載では「${c.nyukin}」とされています（${c.confirmed_date}確認）。`,
     },
     {
-      q: `${c.name}は契約後にキャンセルできますか？`,
+      q: c.cancel_q ?? `${c.name}は契約後にキャンセルできますか？`,
       a: isNA(c.cancel)
         ? naAnswer("契約後のキャンセル規定")
         : `公式サイトの記載では「${c.cancel}」とされています（${c.confirmed_date}確認）。実際の契約条件は、必ず契約書面にてご確認ください。`,
