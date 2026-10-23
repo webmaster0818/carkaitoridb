@@ -21,6 +21,14 @@ export async function generateMetadata({
   const c = getCompany(slug);
   const p = getProcedure(slug);
   if (!p) return {};
+  if (p.flowAfter?.length) {
+    const n = p.flow.length + p.flowAfter.length;
+    return {
+      title: `${c.name}の車買取の流れ｜申し込みから入金・名義変更までの${n}ステップと査定当日の所要時間【公式確認】`,
+      description: `${c.name}で車を売却する流れを、申し込みから契約・引き渡し・入金・名義変更まで${n}ステップで整理しています。査定当日の所要時間（おおよそ40分前後）、契約後の減額・キャンセルの規定も公式サイトで確認しました（${p.flowAfterCheckedOn}確認）。`,
+      alternates: { canonical: `/gyosha/${c.slug}/nagare/` },
+    };
+  }
   return {
     title: `${c.name}の車買取の流れ｜申し込みから入金までの${p.flow.length}ステップ【公式確認】`,
     description: `${c.name}で車を売却する際の流れを、公式サイトの記載にもとづき${p.flow.length}ステップに整理しています（${PROCEDURE_CHECKED_ON}確認）。入金までの期間と、各段階で決める事項もご説明します。`,
@@ -38,11 +46,15 @@ export default async function NagarePage({
   const p = getProcedure(slug);
   if (!p) notFound();
   const cta = ctaFor(c);
+  const after = p.flowAfter ?? [];
+  const total = p.flow.length + after.length;
 
   const faqs = [
     {
       q: `${c.name}の買取は何ステップですか？`,
-      a: `公式サイトに記載されている流れは${p.flow.length}ステップです（${p.flow.map((f) => f.step).join("→")}）。${PROCEDURE_CHECKED_ON}時点の記載にもとづきます。`,
+      a: after.length
+        ? `公式サイトの査定申込みの流れは${p.flow.length}ステップ（${p.flow.map((f) => f.step).join("→")}）です。公式FAQに記載のある査定後の手続き（${after.map((f) => f.step).join("→")}）を含めると、全体で${total}ステップです（${p.flowAfterCheckedOn}確認）。`
+        : `公式サイトに記載されている流れは${p.flow.length}ステップです（${p.flow.map((f) => f.step).join("→")}）。${PROCEDURE_CHECKED_ON}時点の記載にもとづきます。`,
     },
     {
       q: `${c.name}は入金までどれくらいかかりますか？`,
@@ -51,11 +63,12 @@ export default async function NagarePage({
         : `公式サイトの記載にもとづく入金時期は「${fmt(c.nyukin)}」です。書類に不備があると入金が遅れる場合があるため、査定を受ける前に書類を揃えておくことをおすすめします。`,
     },
     {
-      q: `査定額に納得できなかった場合はどうなりますか？`,
+      q: `${c.name}で契約した後にキャンセルできますか？`,
       a: isNA(c.cancel)
         ? `キャンセルの扱いは、${PROCEDURE_CHECKED_ON}時点で公式サイト上に記載を確認できませんでした。ご契約前に、公式サイトにて最新の規定をご確認ください。`
         : `公式サイトの記載にもとづくキャンセルの扱いは「${fmt(c.cancel)}」です。ご契約前に、公式サイトにて最新の規定をご確認ください。`,
     },
+    ...(p.extraFaqs ?? []),
   ];
 
   return (
@@ -71,7 +84,9 @@ export default async function NagarePage({
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">BUYING FLOW</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          {c.name}の車買取の流れ｜申し込みから入金までの{p.flow.length}ステップ
+          {after.length
+            ? `${c.name}の車買取の流れ｜申し込みから入金・名義変更までの${total}ステップ`
+            : `${c.name}の車買取の流れ｜申し込みから入金までの${p.flow.length}ステップ`}
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           {c.name}で車を売却する際の流れを、公式サイトの記載にもとづき整理しています（確認日: {PROCEDURE_CHECKED_ON}）。
@@ -98,6 +113,77 @@ export default async function NagarePage({
             （{PROCEDURE_CHECKED_ON}確認）
           </p>
         </section>
+
+        {after.length > 0 && (
+          <section className="mt-14">
+            <h2 className="section-title mb-5">査定後の流れ：契約から入金・名義変更まで</h2>
+            <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-700">
+              公式サイトの査定申込みの流れは実車査定までです。その後の契約・引き渡し・入金・名義変更は、公式FAQの記載にもとづき整理しています。
+            </p>
+            <ol className="space-y-4">
+              {after.map((f, i) => (
+                <li key={f.step} className="border-l-2 border-vermilion bg-chalk-card px-5 py-4">
+                  <p className="text-sm font-bold text-steel-900">
+                    STEP {p.flow.length + i + 1}　{f.step}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-steel-700">{f.body}</p>
+                </li>
+              ))}
+            </ol>
+            {p.contractNote && (
+              <p className="mt-5 max-w-3xl border border-chalk-line bg-white px-5 py-4 text-sm leading-relaxed text-steel-700">
+                {p.contractNote}
+              </p>
+            )}
+            <p className="mt-3 text-xs leading-relaxed text-steel-500">
+              出典:{" "}
+              {(p.flowAfterSources ?? []).map((s, i) => (
+                <span key={s.url}>
+                  {i > 0 && "、"}
+                  <a href={s.url} rel="nofollow noopener noreferrer" target="_blank" className="underline">
+                    {s.label}
+                  </a>
+                </span>
+              ))}
+              （{p.flowAfterCheckedOn}確認）
+            </p>
+          </section>
+        )}
+
+        {p.dayOf && (
+          <section className="mt-14">
+            <h2 className="section-title mb-5">査定当日の所要時間</h2>
+            <p className="max-w-3xl text-sm leading-loose text-steel-700">{p.dayOf}</p>
+          </section>
+        )}
+
+        {p.voices && p.voices.length > 0 && (
+          <section className="mt-14">
+            <h2 className="section-title mb-5">公式サイトに掲載されている利用者の声（手続きの速さ・名義変更）</h2>
+            <ul className="space-y-3">
+              {p.voices.map((v) => (
+                <li key={v.store + v.date} className="border border-chalk-line bg-white px-5 py-4 text-sm leading-relaxed text-steel-700">
+                  「{v.text}」
+                  <span className="mt-1 block text-xs text-steel-500">
+                    {v.store}・{v.car}・記入日 {v.date}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-xs leading-relaxed text-steel-500">
+              {c.name}の公式FAQページに掲載されている声から、売却の流れに関するものを原文のまま引用しています（店舗名・車種・記入日は公式の掲載どおり）。掲載する声は{c.name}が選んだもので、当サイトでは投稿者に確認していません。
+              {p.voicesSourceUrl && (
+                <>
+                  {" "}出典:{" "}
+                  <a href={p.voicesSourceUrl} rel="nofollow noopener noreferrer" target="_blank" className="underline">
+                    {c.name}公式「車の売り方に関するよくあるご質問」
+                  </a>
+                  （{p.flowAfterCheckedOn}確認）
+                </>
+              )}
+            </p>
+          </section>
+        )}
 
         <section className="mt-14">
           <h2 className="section-title mb-5">事前に確認しておきたい条件</h2>
