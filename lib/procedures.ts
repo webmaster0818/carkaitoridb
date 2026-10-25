@@ -23,6 +23,16 @@ export interface Procedure {
   voices?: { store: string; car: string; date: string; text: string }[];
   voicesSourceUrl?: string;
   extraFaqs?: { q: string; a: string }[];
+  /** 必要書類の一覧を公式で再確認した日（無ければ PROCEDURE_CHECKED_ON） */
+  docsCheckedOn?: string;
+  /** 必要書類ページの追加情報（公式の補足・ケース別の追加書類・紛失時・FAQ） */
+  docsExtra?: {
+    sources: { label: string; url: string }[];
+    points: { label: string; body: string }[];
+    cases: { label: string; body: string }[];
+    lost: { label: string; body: string }[];
+    faqs: { q: string; a: string }[];
+  };
 }
 
 const data = raw as unknown as {
