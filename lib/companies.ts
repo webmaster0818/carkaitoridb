@@ -44,6 +44,9 @@ export interface Company {
   extra_faq?: { q: string; a: string }[];
   /** 関連ガイド（サイト内リンク・関連ページ欄の先頭に出す） */
   related_links?: { path: string; label: string; desc: string }[];
+  /** 査定方法別の流れ（公式「査定の流れ」ページで確認できた社のみ） */
+  flow_sections?: { title: string; source: string; steps: { step: string; body: string }[] }[];
+  flow_checked?: string;
 }
 
 export const companies = raw as unknown as Company[];

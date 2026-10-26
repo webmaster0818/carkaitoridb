@@ -135,6 +135,35 @@ export default async function GyoshaPage({
           )}
         </section>
 
+        {/* 査定方法別の流れ */}
+        {c.flow_sections && c.flow_sections.length > 0 && (
+          <section className="mt-14">
+            <h2 className="section-title mb-5">{c.name}の査定方法と流れ（{c.flow_sections.length}通り）</h2>
+            <div className="space-y-6">
+              {c.flow_sections.map((sec) => (
+                <div key={sec.title} className="border border-chalk-line bg-chalk-card p-5">
+                  <h3 className="font-display text-base text-steel-900">{sec.title}</h3>
+                  <ol className="mt-4 space-y-3">
+                    {sec.steps.map((st, i) => (
+                      <li key={st.step} className="text-sm leading-loose text-steel-700">
+                        <span className="font-bold text-steel-900">STEP{i + 1}　{st.step}：</span>
+                        {st.body}
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="mt-3 text-xs text-steel-500">
+                    出典:{" "}
+                    <a href={sec.source} rel="nofollow noopener" target="_blank" className="text-vermilion underline underline-offset-4">
+                      {sec.source}
+                    </a>
+                    {c.flow_checked && <>（{jaDate(c.flow_checked)}確認）</>}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* 特徴 */}
         <section className="mt-14">
           <h2 className="section-title mb-5">公式サイトが掲げる特徴</h2>
