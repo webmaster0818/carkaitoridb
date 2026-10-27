@@ -5,6 +5,8 @@ export interface Operator {
   address: string;
   kobutsu: string | null;
   source: string;
+  /** 公式に掲載された電話番号・受付時間（確認日つき。検索語が電話番号の社のみ） */
+  tel?: string;
 }
 
 export interface Hiyou {

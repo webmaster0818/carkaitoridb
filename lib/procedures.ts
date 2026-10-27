@@ -42,6 +42,8 @@ export interface Procedure {
   }[];
   /** 必要書類の一覧を公式で再確認した日（無ければ PROCEDURE_CHECKED_ON） */
   docsCheckedOn?: string;
+  /** 必要書類ページ冒頭の即答ブロック（title は変えずに本文冒頭だけ足す場合） */
+  docsLead?: { checkedOn: string; points: { label: string; body: string }[]; sources: { label: string; url: string }[] };
   /** 必要書類ページの追加情報（公式の補足・ケース別の追加書類・紛失時・FAQ） */
   docsExtra?: {
     sources: { label: string; url: string }[];

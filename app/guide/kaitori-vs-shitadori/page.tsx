@@ -5,9 +5,9 @@ import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "買取と下取りはどちらが得か｜仕組みの違いと使い分けの判断基準",
+  title: "下取りと買取どっちがいい？｜仕組みの違いと選び方（手間・時期・車の状態）",
   description:
-    "車の買取と下取りの仕組みの違いを整理し、下取りが値引きと一体で不透明になりやすい理由、買取に競争原理が働きやすい理由を一般論として解説します。手間・時期・車の状態という3つの判断基準から、状況に合った手放し方を選ぶための考え方をまとめています。",
+    "下取りと買取どっちがいいかは、手間・乗り換えの時期・車の状態で決まります。下取りは手続きが1店舗で済み、買取は複数社を比べられます。仕組みの違い、ガリバー・WECARSの公式説明（2026年10月27日確認）、総額で比べる方法をまとめています。",
   alternates: { canonical: "/guide/kaitori-vs-shitadori/" },
 };
 
@@ -16,11 +16,11 @@ const PATH = "/guide/kaitori-vs-shitadori/";
 const articleLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "買取と下取りはどちらが得か｜仕組みの違いと使い分けの判断基準",
+  headline: "下取りと買取どっちがいい？｜仕組みの違いと選び方（手間・時期・車の状態）",
   description:
     "車の買取と下取りの仕組みの違いと、手間・時期・車の状態という3つの判断基準を一般論として解説する記事です。",
   datePublished: "2026-08-10",
-  dateModified: "2026-08-10",
+  dateModified: "2026-10-27",
   author: { "@type": "Organization", name: SITE_NAME },
   publisher: { "@type": "Organization", name: "株式会社MediaX" },
   mainEntityOfPage: `${SITE_URL}${PATH}`,
@@ -59,11 +59,30 @@ export default function GuideKaitoriVsShitadoriPage() {
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">SELL OR TRADE-IN</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          買取と下取りはどちらが得か｜仕組みの違いと使い分けの判断基準
+          下取りと買取どっちがいい？｜仕組みの違いと選び方（手間・時期・車の状態）
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           車を手放す方法は、大きく「買取業者に売る」か「次の車の購入先に下取りに出す」かに分かれます。どちらが得かは車と状況によって異なるため金額の断定はできませんが、両者は仕組みが異なるため、違いを把握しておくことで判断の軸が定まりやすくなります。本ページでは、仕組みの違いと使い分けの判断軸を一般論として整理します。
         </p>
+
+        {/* 即答 */}
+        <section className="mt-8 max-w-3xl border-2 border-vermilion bg-white px-5 py-5">
+          <h2 className="text-base font-bold text-steel-900">結論：下取りと買取、どっちを選ぶか</h2>
+          <dl className="mt-4 space-y-3 text-sm leading-loose text-steel-700">
+            <div>
+              <dt className="font-bold text-steel-900">下取りが向く場合</dt>
+              <dd>次の車を買う店で売却まで1回で済ませたい場合、納車の日まで今の車に乗り続けたい場合です。下取りは新しい車を買うときにしか使えず、下取り額は次の車の支払いに充てられます。</dd>
+            </div>
+            <div>
+              <dt className="font-bold text-steel-900">買取が向く場合</dt>
+              <dd>複数の業者の金額を比べたい場合、次の車がまだ決まっていない場合、売却したお金を自由に使いたい場合です。年式の古い車・輸入車・事故車などは、専門の買取業者で評価が変わることがあります。</dd>
+            </div>
+            <div>
+              <dt className="font-bold text-steel-900">比べ方</dt>
+              <dd>「下取り額＋車両値引き」と「買取額＋車両値引き」を、乗り換え全体の支払総額で比べます。下取り額だけ・買取額だけで比べると、値引きとの振り替えを見落とします。</dd>
+            </div>
+          </dl>
+        </section>
 
         {/* 冒頭の要点 */}
         <section className="mt-10 border-l-4 border-vermilion bg-chalk-card p-6">
@@ -141,6 +160,44 @@ export default function GuideKaitoriVsShitadoriPage() {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* 公式の説明 */}
+        <section className="mt-14">
+          <h2 className="section-title mb-5">買取業者の公式サイトにある下取りとの違いの説明</h2>
+          <div className="space-y-4">
+            <div className="border border-chalk-line bg-chalk-card p-5">
+              <h3 className="font-display text-base text-steel-900">ガリバー（よくあるご質問「下取りと買い取りって何が違うの？」）</h3>
+              <p className="mt-3 text-sm leading-loose text-steel-700">
+                下取りは新しい車を買うお店に今の車を引き取ってもらうこと、買取は新しい車の購入とは関係なく買取専門店や販売店に直接売ることと説明しています。下取りの利点として、車の売買を1店舗で済ませられ手続きが楽な傾向があること、値引きできない分を下取り額で補うことがあることを挙げています。欠点として、他の買取店で高い査定額が付いても下取り額を合わせてくれることはほとんどないこと、下取り代金は次に買う車の支払いに充てられることを挙げています。下取り価格が高いディーラーでは車両の値引き額が低くなるなど、ディーラー同士で比べても実際の売値は変わらないことが多いとも記載しています。
+              </p>
+              <p className="mt-3 text-xs text-steel-500">
+                出典:{" "}
+                <a href="https://221616.com/satei/faq/difference/" rel="nofollow noopener noreferrer" target="_blank" className="underline">
+                  ガリバー公式「下取りと買い取りって何が違うの？」
+                </a>
+                （2026年10月27日確認）。買取店の説明であるため、買取に有利な立場からの記載である点にご留意ください。
+              </p>
+            </div>
+            <div className="border border-chalk-line bg-chalk-card p-5">
+              <h3 className="font-display text-base text-steel-900">WECARS（よくあるご質問「車を手放した後の移動手段」）</h3>
+              <p className="mt-3 text-sm leading-loose text-steel-700">
+                買取で先に車を引き取られると納車まで車がない、という不安に対し、売却後、新しい車の納車を待つ期間中も一定期間、無料で代車を使えると回答しています。下取りの利点とされる「納車まで乗り続けられる」点は、買取でも代車サービスの有無で差が小さくなる場合があります。代車の有無・期間は業者ごとに異なるため、契約前にご確認ください。
+              </p>
+              <p className="mt-3 text-xs text-steel-500">
+                出典:{" "}
+                <a href="https://www.wecars.co.jp/information/faq/" rel="nofollow noopener noreferrer" target="_blank" className="underline">
+                  WECARS公式「よくあるご質問」
+                </a>
+                （2026年10月27日確認）
+              </p>
+            </div>
+          </div>
+          <p className="mt-4 text-sm leading-loose text-steel-700">
+            ガリバーの下取りと買取の違いは、
+            <Link href="/gyosha/gulliver/nagare/" className="text-vermilion underline underline-offset-4">ガリバーで車を売る流れ</Link>
+            でも公式の説明を整理しています。
+          </p>
         </section>
 
         {/* 注意点 */}

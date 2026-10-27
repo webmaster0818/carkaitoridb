@@ -107,6 +107,32 @@ export default async function ShoruiPage({
           {ex && "住所・氏名が変わっている場合やローンが残っている場合の追加書類、紛失時の再発行窓口も、公式サイトの記載と公的機関の案内にもとづいてまとめています。"}
         </p>
 
+        {p.docsLead && (
+          <section className="mt-8 max-w-3xl border-2 border-vermilion bg-white px-5 py-5">
+            <h2 className="text-base font-bold text-steel-900">結論：{c.name}で車を売るときの必要書類と納税証明書の扱い</h2>
+            <dl className="mt-4 space-y-3">
+              {p.docsLead.points.map((pt) => (
+                <div key={pt.label}>
+                  <dt className="text-sm font-bold text-steel-900">{pt.label}</dt>
+                  <dd className="mt-1 text-sm leading-loose text-steel-700">{pt.body}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-4 text-xs leading-relaxed text-steel-500">
+              出典:{" "}
+              {p.docsLead.sources.map((src, i) => (
+                <span key={src.url}>
+                  {i > 0 && "／"}
+                  <a href={src.url} rel="nofollow noopener noreferrer" target="_blank" className="underline">
+                    {src.label}
+                  </a>
+                </span>
+              ))}
+              （{p.docsLead.checkedOn}確認）
+            </p>
+          </section>
+        )}
+
         <section className="mt-10 grid gap-8 md:grid-cols-2">
           <div>
             <h2 className="section-title mb-5">普通自動車（{p.docsNormal.length}点）</h2>

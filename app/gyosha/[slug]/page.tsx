@@ -196,6 +196,12 @@ export default async function GyoshaPage({
                   <th>所在地</th>
                   <td>{c.operator.address}</td>
                 </tr>
+                {c.operator.tel && (
+                  <tr>
+                    <th>電話番号・受付時間</th>
+                    <td>{c.operator.tel}</td>
+                  </tr>
+                )}
                 <tr>
                   <th>古物商許可</th>
                   <td>{fmt(c.operator.kobutsu)}</td>
