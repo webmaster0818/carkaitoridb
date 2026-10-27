@@ -23,6 +23,23 @@ export interface Procedure {
   voices?: { store: string; car: string; date: string; text: string }[];
   voicesSourceUrl?: string;
   extraFaqs?: { q: string; a: string }[];
+  /** 流れページの公式再確認日（無ければ PROCEDURE_CHECKED_ON） */
+  flowCheckedOn?: string;
+  /** 流れページの title/description/h1 を検索語に合わせて個別指定する場合 */
+  seoTitle?: string;
+  seoDescription?: string;
+  h1?: string;
+  /** 流れページ冒頭の即答ブロック */
+  leadAnswer?: { points: { label: string; body: string }[]; sources: { label: string; url: string }[] };
+  /** 流れページの追加節（簡単査定の手順・入金・キャンセル・下取りとの違い等） */
+  sections?: {
+    title: string;
+    intro?: string;
+    steps?: FlowStep[];
+    rows?: { label: string; body: string }[];
+    note?: string;
+    sources: { label: string; url: string }[];
+  }[];
   /** 必要書類の一覧を公式で再確認した日（無ければ PROCEDURE_CHECKED_ON） */
   docsCheckedOn?: string;
   /** 必要書類ページの追加情報（公式の補足・ケース別の追加書類・紛失時・FAQ） */

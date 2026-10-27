@@ -21,6 +21,13 @@ export async function generateMetadata({
   const c = getCompany(slug);
   const p = getProcedure(slug);
   if (!p) return {};
+  if (p.seoTitle) {
+    return {
+      title: p.seoTitle,
+      description: p.seoDescription,
+      alternates: { canonical: `/gyosha/${c.slug}/nagare/` },
+    };
+  }
   if (p.flowAfter?.length) {
     const n = p.flow.length + p.flowAfter.length;
     return {
@@ -48,24 +55,27 @@ export default async function NagarePage({
   const cta = ctaFor(c);
   const after = p.flowAfter ?? [];
   const total = p.flow.length + after.length;
+  const flowChecked = p.flowCheckedOn ?? PROCEDURE_CHECKED_ON;
+  const sections = p.sections ?? [];
+  const others = companies.filter((o) => o.slug !== c.slug && procedureSlugs.includes(o.slug));
 
   const faqs = [
     {
       q: `${c.name}の買取は何ステップですか？`,
       a: after.length
         ? `公式サイトの査定申込みの流れは${p.flow.length}ステップ（${p.flow.map((f) => f.step).join("→")}）です。公式FAQに記載のある査定後の手続き（${after.map((f) => f.step).join("→")}）を含めると、全体で${total}ステップです（${p.flowAfterCheckedOn}確認）。`
-        : `公式サイトに記載されている流れは${p.flow.length}ステップです（${p.flow.map((f) => f.step).join("→")}）。${PROCEDURE_CHECKED_ON}時点の記載にもとづきます。`,
+        : `公式サイトに記載されている流れは${p.flow.length}ステップです（${p.flow.map((f) => f.step).join("→")}）。${flowChecked}時点の記載にもとづきます。`,
     },
     {
       q: `${c.name}は入金までどれくらいかかりますか？`,
       a: isNA(c.nyukin)
-        ? `入金時期は、${PROCEDURE_CHECKED_ON}時点で公式サイト上に記載を確認できませんでした。書類に不備があると入金が遅れる場合があるため、査定を受ける前に書類を揃えておくことをおすすめします。`
+        ? `入金時期は、${flowChecked}時点で公式サイト上に記載を確認できませんでした。書類に不備があると入金が遅れる場合があるため、査定を受ける前に書類を揃えておくことをおすすめします。`
         : `公式サイトの記載にもとづく入金時期は「${fmt(c.nyukin)}」です。書類に不備があると入金が遅れる場合があるため、査定を受ける前に書類を揃えておくことをおすすめします。`,
     },
     {
       q: `${c.name}で契約した後にキャンセルできますか？`,
       a: isNA(c.cancel)
-        ? `キャンセルの扱いは、${PROCEDURE_CHECKED_ON}時点で公式サイト上に記載を確認できませんでした。ご契約前に、公式サイトにて最新の規定をご確認ください。`
+        ? `キャンセルの扱いは、${flowChecked}時点で公式サイト上に記載を確認できませんでした。ご契約前に、公式サイトにて最新の規定をご確認ください。`
         : `公式サイトの記載にもとづくキャンセルの扱いは「${fmt(c.cancel)}」です。ご契約前に、公式サイトにて最新の規定をご確認ください。`,
     },
     ...(p.extraFaqs ?? []),
@@ -84,14 +94,42 @@ export default async function NagarePage({
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">BUYING FLOW</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          {after.length
+          {p.h1
+            ? p.h1
+            : after.length
             ? `${c.name}の車買取の流れ｜申し込みから入金・名義変更までの${total}ステップ`
             : `${c.name}の車買取の流れ｜申し込みから入金までの${p.flow.length}ステップ`}
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          {c.name}で車を売却する際の流れを、公式サイトの記載にもとづき整理しています（確認日: {PROCEDURE_CHECKED_ON}）。
+          {c.name}で車を売却する際の流れを、公式サイトの記載にもとづき整理しています（確認日: {flowChecked}）。
           各ステップで決める事項と、手続きが滞りやすい点もあわせて記載しています。公式サイトに記載のない内容は、推測で補っていません。
         </p>
+
+        {p.leadAnswer && (
+          <section className="mt-8 max-w-3xl border-2 border-vermilion bg-white px-5 py-5">
+            <h2 className="text-base font-bold text-steel-900">結論：{c.name}で車を売る流れ・入金・キャンセル</h2>
+            <dl className="mt-3 space-y-3">
+              {p.leadAnswer.points.map((pt) => (
+                <div key={pt.label}>
+                  <dt className="text-sm font-bold text-steel-900">{pt.label}</dt>
+                  <dd className="mt-1 text-sm leading-relaxed text-steel-700">{pt.body}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-3 text-xs leading-relaxed text-steel-500">
+              出典:{" "}
+              {p.leadAnswer.sources.map((s, i) => (
+                <span key={s.url}>
+                  {i > 0 && "、"}
+                  <a href={s.url} rel="nofollow noopener noreferrer" target="_blank" className="underline">
+                    {s.label}
+                  </a>
+                </span>
+              ))}
+              （{flowChecked}確認）
+            </p>
+          </section>
+        )}
 
         <section className="mt-10">
           <h2 className="section-title mb-5">公式サイトに記載されている{p.flow.length}ステップ</h2>
@@ -110,9 +148,57 @@ export default async function NagarePage({
             <a href={p.flowSourceUrl} rel="nofollow noopener noreferrer" target="_blank" className="underline">
               {c.name}公式サイト
             </a>
-            （{PROCEDURE_CHECKED_ON}確認）
+            （{flowChecked}確認）
           </p>
         </section>
+
+        {sections.map((sec) => (
+          <section key={sec.title} className="mt-14">
+            <h2 className="section-title mb-5">{sec.title}</h2>
+            {sec.intro && <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-700">{sec.intro}</p>}
+            {sec.steps && (
+              <ol className="space-y-4">
+                {sec.steps.map((f, i) => (
+                  <li key={f.step} className="border-l-2 border-vermilion bg-chalk-card px-5 py-4">
+                    <p className="text-sm font-bold text-steel-900">
+                      STEP {i + 1}　{f.step}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-steel-700">{f.body}</p>
+                  </li>
+                ))}
+              </ol>
+            )}
+            {sec.rows && (
+              <div className="overflow-x-auto border border-chalk-line">
+                <table className="spec-table">
+                  <tbody>
+                    {sec.rows.map((r) => (
+                      <tr key={r.label}>
+                        <th className="w-36 md:w-56">{r.label}</th>
+                        <td>{r.body}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            {sec.note && (
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-steel-700">{sec.note}</p>
+            )}
+            <p className="mt-3 text-xs leading-relaxed text-steel-500">
+              出典:{" "}
+              {sec.sources.map((s, i) => (
+                <span key={s.url}>
+                  {i > 0 && "、"}
+                  <a href={s.url} rel="nofollow noopener noreferrer" target="_blank" className="underline">
+                    {s.label}
+                  </a>
+                </span>
+              ))}
+              （{flowChecked}確認）
+            </p>
+          </section>
+        ))}
 
         {after.length > 0 && (
           <section className="mt-14">
@@ -246,6 +332,36 @@ export default async function NagarePage({
             ))}
           </div>
         </section>
+
+        {others.length > 0 && (
+          <section className="mt-14">
+            <h2 className="section-title mb-5">他社の車買取の流れ</h2>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {others.map((o) => (
+                <li key={o.slug}>
+                  <Link href={`/gyosha/${o.slug}/nagare/`} className="text-sm text-vermilion underline underline-offset-4">
+                    {o.name}の車買取の流れ
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href={`/gyosha/${c.slug}/shorui/`} className="text-sm text-vermilion underline underline-offset-4">
+                  {c.name}の車売却に必要な書類
+                </Link>
+              </li>
+              <li>
+                <Link href="/guide/kaitori-vs-shitadori/" className="text-sm text-vermilion underline underline-offset-4">
+                  買取と下取りの違い
+                </Link>
+              </li>
+              <li>
+                <Link href="/guide/shorui/" className="text-sm text-vermilion underline underline-offset-4">
+                  車売却の必要書類（普通車・軽自動車）
+                </Link>
+              </li>
+            </ul>
+          </section>
+        )}
 
         <section className="mt-14">
           <div className="flex flex-col gap-3 sm:flex-row">
