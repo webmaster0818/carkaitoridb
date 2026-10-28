@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sell-car.net/</loc><lastmod>2026-10-26</lastmod></url>
-  <url><loc>https://sell-car.net/compare/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://sell-car.net/compare/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://sell-car.net/gaisha/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://sell-car.net/truck/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://sell-car.net/haisha/</loc><lastmod>2026-10-20</lastmod></url>
@@ -10,14 +10,14 @@
   <url><loc>https://sell-car.net/maker/suzuki/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://sell-car.net/maker/daihatsu/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://sell-car.net/maker/toyota/</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://sell-car.net/maker/honda/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://sell-car.net/maker/honda/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://sell-car.net/auction/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/gaisha-master/</loc><lastmod>2026-10-17</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/gulliver/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/apple/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/carseven/</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://sell-car.net/gyosha/nextage/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://sell-car.net/gyosha/carsensor-kantan-net-satei/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://sell-car.net/gyosha/nextage/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://sell-car.net/gyosha/carsensor-kantan-net-satei/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/zubat-car-kaitori/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/navikuru/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/mota-car-kaitori/</loc><lastmod>2026-10-22</lastmod></url>
@@ -25,7 +25,7 @@
   <url><loc>https://sell-car.net/gyosha/qsha-oh/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/haishar/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/truck-oukoku/</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://sell-car.net/gyosha/bee-truck/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://sell-car.net/gyosha/bee-truck/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/sellca/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/strema/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://sell-car.net/gyosha/wecars/</loc><lastmod>2026-10-27</lastmod></url>
@@ -79,7 +79,7 @@
   </url>
   <url>
     <loc>https://sell-car.net/gyosha/nextage/nagare/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
