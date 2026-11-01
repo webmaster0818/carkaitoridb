@@ -597,6 +597,8 @@
     },
     "nextage": {
       "flowSourceUrl": "https://www.nextage.jp/kaitori/",
+      "flowCheckedOn": "2026年11月1日",
+      "docsCheckedOn": "2026年11月1日",
       "docsSourceUrl": "https://www.nextage.jp/sell_guide/flow/214552/",
       "flow": [
         {
@@ -628,12 +630,12 @@
       "docsKei": [
         "自動車検査証",
         "自賠責保険証明書",
-        "印鑑登録証明書",
+        "住民票",
         "軽自動車納税証明書",
         "振込口座情報",
         "リサイクル券"
       ],
-      "docsKeiNote": "軽自動車について、公式の書類一覧に実印の記載はありません。"
+      "docsKeiNote": "軽自動車について、公式の書類一覧に実印の記載はありません。公式の売却ガイド「車売却・買取に必要な書類」（https://www.nextage.jp/sell_guide/document/）では、軽自動車は書類への証明が認印または署名で済み、印鑑証明書の代わりに住民票を提出する（コピーでも可）と記載されています。"
     },
     "carseven": {
       "flowSourceUrl": "https://www.carseven.co.jp/kaitori/",
