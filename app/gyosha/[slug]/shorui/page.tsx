@@ -39,15 +39,16 @@ export async function generateMetadata({
   const p = getProcedure(slug);
   if (!p) return {};
   const checked = p.docsCheckedOn ?? PROCEDURE_CHECKED_ON;
+  const docsWord = p.docsTitleKw ? "の車買取の必要書類" : "の車買取に必要な書類";
   if (p.docsExtra) {
     return {
-      title: `${c.name}の車買取に必要な書類｜普通車${p.docsNormal.length}点・軽自動車${p.docsKei.length}点と住所変更・ローン・紛失時【公式確認】`,
+      title: `${c.name}${docsWord}｜普通車${p.docsNormal.length}点・軽自動車${p.docsKei.length}点と住所変更・ローン・紛失時【公式確認】`,
       description: `${c.name}で車を売却する際の必要書類を、公式サイトの記載にもとづき普通自動車と軽自動車に分けて整理しています（${checked}確認）。印鑑証明書の通数と期限、住所・氏名が変わった場合、ローンが残っている場合、相続・代理人の場合の追加書類、紛失時の再発行窓口、運輸支局・軽自動車検査協会の案内もまとめています。`,
       alternates: { canonical: `/gyosha/${c.slug}/shorui/` },
     };
   }
   return {
-    title: `${c.name}の車買取に必要な書類｜普通車${p.docsNormal.length}点・軽自動車${p.docsKei.length}点【公式確認】`,
+    title: `${c.name}${docsWord}｜普通車${p.docsNormal.length}点・軽自動車${p.docsKei.length}点【公式確認】`,
     description: `${c.name}で車を売却する際の必要書類を、公式サイトの記載にもとづき普通自動車と軽自動車に分けて整理しています（${checked}確認）。紛失時の再発行窓口もあわせてご案内します。`,
     alternates: { canonical: `/gyosha/${c.slug}/shorui/` },
   };
@@ -99,17 +100,22 @@ export default async function ShoruiPage({
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">REQUIRED DOCUMENTS</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          {c.name}の車買取に必要な書類｜普通車{p.docsNormal.length}点・軽自動車{p.docsKei.length}点
+          {c.name}{p.docsTitleKw ? "の車買取の必要書類" : "の車買取に必要な書類"}｜普通車{p.docsNormal.length}点・軽自動車{p.docsKei.length}点
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           {c.name}の公式サイトに記載されている必要書類を、普通自動車と軽自動車に分けて整理しています（確認日: {checked}）。
           公式サイトに記載のない書類は追加していません。
           {ex && "住所・氏名が変わっている場合やローンが残っている場合の追加書類、紛失時の再発行窓口も、公式サイトの記載と公的機関の案内にもとづいてまとめています。"}
+          申込みから入金までの手順は
+          <Link href={`/gyosha/${c.slug}/nagare/`} className="text-vermilion underline underline-offset-4">{c.name}の車買取の流れ</Link>
+          、手数料・入金・キャンセル規定は
+          <Link href={`/gyosha/${c.slug}/`} className="text-vermilion underline underline-offset-4">{c.name}の業者ページ</Link>
+          にまとめています。
         </p>
 
         {p.docsLead && (
           <section className="mt-8 max-w-3xl border-2 border-vermilion bg-white px-5 py-5">
-            <h2 className="text-base font-bold text-steel-900">結論：{c.name}で車を売るときの必要書類と納税証明書の扱い</h2>
+            <h2 className="text-base font-bold text-steel-900">{c.name}で車を売るときの必要書類と納税証明書の扱い</h2>
             <dl className="mt-4 space-y-3">
               {p.docsLead.points.map((pt) => (
                 <div key={pt.label}>

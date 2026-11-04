@@ -103,11 +103,16 @@ export default async function NagarePage({
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           {c.name}で車を売却する際の流れを、公式サイトの記載にもとづき整理しています（確認日: {flowChecked}）。
           各ステップで決める事項と、手続きが滞りやすい点もあわせて記載しています。公式サイトに記載のない内容は、推測で補っていません。
+          必要書類の一覧は
+          <Link href={`/gyosha/${c.slug}/shorui/`} className="text-vermilion underline underline-offset-4">{c.name}の車買取の必要書類</Link>
+          、手数料・入金・キャンセル規定は
+          <Link href={`/gyosha/${c.slug}/`} className="text-vermilion underline underline-offset-4">{c.name}の業者ページ</Link>
+          にまとめています。
         </p>
 
         {p.leadAnswer && (
           <section className="mt-8 max-w-3xl border-2 border-vermilion bg-white px-5 py-5">
-            <h2 className="text-base font-bold text-steel-900">結論：{c.name}で車を売る流れ・入金・キャンセル</h2>
+            <h2 className="text-base font-bold text-steel-900">{c.name}で車を売る流れ・入金・キャンセル</h2>
             <dl className="mt-3 space-y-3">
               {p.leadAnswer.points.map((pt) => (
                 <div key={pt.label}>
@@ -309,11 +314,14 @@ export default async function NagarePage({
           <p className="max-w-3xl text-sm leading-loose text-steel-700">
             {c.name}の公式サイトでも、書類の準備は査定より前の段階に位置付けられています。
             当日に書類が不足していると、その場で署名・押印ができず、入金も遅れます。
-            必要書類は普通自動車と軽自動車で異なるため、事前にご確認ください。
+            公式サイトに記載されている必要書類は、普通自動車が{p.docsNormal.length}点、軽自動車が{p.docsKei.length}点です。
+            書類の一覧、印鑑証明書の通数と期限、納税証明書の扱い、住所変更・ローン・相続などで追加になる書類、紛失時の再発行窓口は、
+            <Link href={`/gyosha/${c.slug}/shorui/`} className="text-vermilion underline underline-offset-4">{c.name}の車買取の必要書類</Link>
+            のページにまとめています。
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href={`/gyosha/${c.slug}/shorui/`} className="btn-primary">
-              {c.name}の必要書類を確認する
+              {c.name}の必要書類（普通車{p.docsNormal.length}点・軽自動車{p.docsKei.length}点）
             </Link>
             <Link href={`/gyosha/${c.slug}/`} className="btn-ghost">
               {c.name}の手数料・入金・キャンセル規定
@@ -346,7 +354,7 @@ export default async function NagarePage({
               ))}
               <li>
                 <Link href={`/gyosha/${c.slug}/shorui/`} className="text-sm text-vermilion underline underline-offset-4">
-                  {c.name}の車売却に必要な書類
+                  {c.name}の車買取の必要書類
                 </Link>
               </li>
               <li>
