@@ -7,7 +7,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "下取りと買取どっちがいい？｜仕組みの違いと選び方（手間・時期・車の状態）",
   description:
-    "下取りと買取どっちがいいかは、手間・乗り換えの時期・車の状態で決まります。下取りは手続きが1店舗で済み、買取は複数社を比べられます。仕組みの違い、ガリバー・WECARSの公式説明（2026年10月27日確認）、総額で比べる方法をまとめています。",
+    "下取りと買取どっちがいいかは、手間・乗り換えの時期・車の状態で決まります。下取りは手続きが1店舗で済み、買取は複数社を比べられます。仕組みの違い、ガリバー（2026年11月16日確認）・WECARS（2026年10月27日確認）の公式説明、総額で比べる方法をまとめています。",
   alternates: { canonical: "/guide/kaitori-vs-shitadori/" },
 };
 
@@ -176,7 +176,7 @@ export default function GuideKaitoriVsShitadoriPage() {
                 <a href="https://221616.com/satei/faq/difference/" rel="nofollow noopener noreferrer" target="_blank" className="underline">
                   ガリバー公式「下取りと買い取りって何が違うの？」
                 </a>
-                （2026年10月27日確認）。買取店の説明であるため、買取に有利な立場からの記載である点にご留意ください。
+                （2026年11月16日確認）。買取店の説明であるため、買取に有利な立場からの記載である点にご留意ください。
               </p>
             </div>
             <div className="border border-chalk-line bg-chalk-card p-5">
