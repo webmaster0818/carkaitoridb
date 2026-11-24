@@ -27,6 +27,11 @@ export default function CompanyCard({ company }: { company: Company }) {
           公式確認日 {company.confirmed_date}
         </span>
       </div>
+      {company.status_notice && (
+        <p className="border-b border-chalk-line bg-vermilion-faint px-4 py-2.5 text-[12px] font-bold leading-relaxed text-vermilion-dark">
+          {company.status_notice}
+        </p>
+      )}
       <dl className="divide-y divide-chalk-line text-[13px] leading-relaxed">
         {rows.map((r) => (
           <div key={r.label} className="flex gap-3 px-4 py-2.5">

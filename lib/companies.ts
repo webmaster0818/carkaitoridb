@@ -34,6 +34,8 @@ export interface Company {
   features: string[];
   confirmed_date: string;
   note?: string | null;
+  /** サービス停止など、公式が告知している現在の状況（確認日つき。解消したら外す） */
+  status_notice?: string;
   /** 業者別SEO上書き（未指定なら共通テンプレート） */
   seo_title?: string;
   seo_description?: string;

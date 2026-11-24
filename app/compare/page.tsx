@@ -72,6 +72,11 @@ export default function ComparePage() {
                       >
                         公式サイト ↗
                       </a>
+                      {c.status_notice && (
+                        <p className="mt-2 text-[11px] font-bold leading-relaxed text-vermilion-dark">
+                          {c.status_notice}
+                        </p>
+                      )}
                     </td>
                     <td>{serviceTypeOf(c)}</td>
                     <td>{feeSummary(c)}</td>

@@ -82,6 +82,11 @@ export default async function GyoshaPage({
             最終更新: <time dateTime={c.updated_date}>{jaDate(c.updated_date)}</time>
           </p>
         )}
+        {c.status_notice && (
+          <p className="mt-5 max-w-3xl border border-vermilion bg-vermilion-faint px-5 py-3 text-sm font-bold leading-loose text-vermilion-dark">
+            {c.status_notice}
+          </p>
+        )}
         {c.lead_answer && (
           <div className="mt-5 max-w-3xl border-l-4 border-vermilion bg-chalk-card px-5 py-4">
             <p className="text-[15px] font-bold leading-loose text-steel-900">{c.lead_answer}</p>
