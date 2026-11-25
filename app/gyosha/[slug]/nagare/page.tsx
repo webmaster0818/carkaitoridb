@@ -32,7 +32,7 @@ export async function generateMetadata({
     const n = p.flow.length + p.flowAfter.length;
     return {
       title: `${c.name}の車買取の流れ｜申し込みから入金・名義変更までの${n}ステップと査定当日の所要時間【公式確認】`,
-      description: `${c.name}で車を売却する流れを、申し込みから契約・引き渡し・入金・名義変更まで${n}ステップで整理しています。査定当日の所要時間（おおよそ40分前後）、契約後の減額・キャンセルの規定も公式サイトで確認しました（${p.flowAfterCheckedOn}確認）。`,
+      description: `${c.name}で車を売却する流れを、申し込みから契約・引き渡し・入金・名義変更まで${n}ステップで整理しています。査定当日の所要時間（おおよそ60分前後）、契約後の減額・キャンセルの規定も公式サイトで確認しました（${p.flowAfterCheckedOn}確認）。`,
       alternates: { canonical: `/gyosha/${c.slug}/nagare/` },
     };
   }
@@ -63,7 +63,7 @@ export default async function NagarePage({
     {
       q: `${c.name}の買取は何ステップですか？`,
       a: after.length
-        ? `公式サイトの査定申込みの流れは${p.flow.length}ステップ（${p.flow.map((f) => f.step).join("→")}）です。公式FAQに記載のある査定後の手続き（${after.map((f) => f.step).join("→")}）を含めると、全体で${total}ステップです（${p.flowAfterCheckedOn}確認）。`
+        ? `公式サイトの査定申込みの流れは${p.flow.length}ステップ（${p.flow.map((f) => f.step).join("→")}）です。公式FAQに記載のある契約後の手続き（${after.map((f) => f.step).join("→")}）を含めると、全体で${total}ステップです（${p.flowAfterCheckedOn}確認）。`
         : `公式サイトに記載されている流れは${p.flow.length}ステップです（${p.flow.map((f) => f.step).join("→")}）。${flowChecked}時点の記載にもとづきます。`,
     },
     {
@@ -207,9 +207,9 @@ export default async function NagarePage({
 
         {after.length > 0 && (
           <section className="mt-14">
-            <h2 className="section-title mb-5">査定後の流れ：契約から入金・名義変更まで</h2>
+            <h2 className="section-title mb-5">契約後の流れ：引き渡しから入金・名義変更まで</h2>
             <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-700">
-              公式サイトの査定申込みの流れは実車査定までです。その後の契約・引き渡し・入金・名義変更は、公式FAQの記載にもとづき整理しています。
+              公式サイトの査定申込みの流れは契約までです。その後の引き渡し・入金・名義変更は、公式FAQの記載にもとづき整理しています。
             </p>
             <ol className="space-y-4">
               {after.map((f, i) => (
@@ -267,7 +267,7 @@ export default async function NagarePage({
                 <>
                   {" "}出典:{" "}
                   <a href={p.voicesSourceUrl} rel="nofollow noopener noreferrer" target="_blank" className="underline">
-                    {c.name}公式「車の売り方に関するよくあるご質問」
+                    {c.name}公式「よくあるご質問」
                   </a>
                   （{p.flowAfterCheckedOn}確認）
                 </>

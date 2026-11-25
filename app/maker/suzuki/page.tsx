@@ -185,7 +185,7 @@ export default function MakerSuzukiPage() {
       <p>
         当サイトは、メーカー別の買取可否を独自に判定しません。以下は、各社の公式サイトで確認した記載内容です。
         <Link href="/gyosha/carseven/" className="text-vermilion underline underline-offset-4">カーセブン</Link>
-        は買取対象として国産車および輸入車を掲載し、国産のブランド名としてスズキを含むメーカー名を公式サイトに挙げています（2026年9月11日確認）。
+        は買取対象として国産車および輸入車を掲載し、国産のブランド名としてスズキを含むメーカー名を公式サイトに挙げています（2026年11月25日確認）。
         <Link href="/gyosha/sellca/" className="text-vermilion underline underline-offset-4">セルカ</Link>
         は、公式トップの買取相場検索でメーカーにスズキを、ボディタイプに軽自動車・セダン・SUV・ミニバン等を掲載し、出品できない車として、車検証がない車や国内未登録車（並行車両）などを公式FAQに挙げています（2026年10月21日確認）。
         <Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>

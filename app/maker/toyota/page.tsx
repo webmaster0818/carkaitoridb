@@ -189,7 +189,7 @@ export default function MakerToyotaPage() {
       <p>
         当サイトは、メーカー別の買取可否を独自に判定しません。以下は、各社の公式サイトで確認した記載内容です。
         <Link href="/gyosha/carseven/" className="text-vermilion underline underline-offset-4">カーセブン</Link>
-        は買取対象として国産車および輸入車を掲載し、国産のブランド名としてトヨタを含むメーカー名を公式サイトに挙げています（2026年9月11日確認）。
+        は買取対象として国産車および輸入車を掲載し、国産のブランド名としてトヨタを含むメーカー名を公式サイトに挙げています（2026年11月25日確認）。
         <Link href="/gyosha/gulliver/" className="text-vermilion underline underline-offset-4">ガリバー</Link>
         は、車検切れの車や一時登録抹消済みの車（抹消登録証明書が必要）も査定・買取の対象と公式FAQに記載する一方、永久抹消登録の車と車検証がない車は買取不可としています（2026年11月23日確認）。
         <Link href="/gyosha/mota-car-kaitori/" className="text-vermilion underline underline-offset-4">MOTA車買取</Link>

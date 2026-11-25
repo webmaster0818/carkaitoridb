@@ -341,9 +341,9 @@ export default function KeiPage() {
               <Link href="/gyosha/sellca/" className="text-vermilion underline underline-offset-4">セルカ</Link>
               は、公式トップの買取相場検索に軽自動車・軽-トラック・セダン・SUV・ミニバン・トラック等のボディタイプと輸入車のカテゴリーを掲載し、出品できない車として、車検証がない車や国内未登録車（並行車両）などを公式FAQに挙げています（2026年10月21日確認）。
               <Link href="/gyosha/carseven/" className="text-vermilion underline underline-offset-4">カーセブン</Link>
-              は買取対象として国産車および輸入車を掲載し、国産のブランド名としてスズキ・ダイハツ・トヨタ・ホンダなどを公式サイトに挙げています（2026年9月11日確認）。
+              は買取対象として国産車および輸入車を掲載し、国産のブランド名としてスズキ・ダイハツ・トヨタ・ホンダなどを公式サイトに挙げています（2026年11月25日確認）。
               <Link href="/gyosha/apple/" className="text-vermilion underline underline-offset-4">アップル</Link>
-              は「どんな車でも買取します」と公式トップに記載し、国産車・輸入車の各メーカーを買取査定の対象として掲載しています（2026年9月11日確認）。
+              は国産車・輸入車の各メーカーを買取・査定相場の対象として公式サイトに掲載し、公式FAQでは輸入車の査定にも対応すると回答しています（2026年11月25日確認）。
               <Link href="/gyosha/haishar/" className="text-vermilion underline underline-offset-4">ハイシャル</Link>
               は、対応地域のページで「事故車・動かない車・年式が古い車・走行距離10万キロ超えの車」を対象に挙げています（2026年10月20日確認）。
               <Link href="/gyosha/gulliver/" className="text-vermilion underline underline-offset-4">ガリバー</Link>
